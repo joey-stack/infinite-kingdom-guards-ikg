@@ -1,5 +1,7 @@
 ---
 deployment:
   tasks:
-    - /bin/cp -R dist/* /home1/wisdohkr/public_html/
-    - /bin/chmod 755 /home1/wisdohkr/public_html/index.html
+    - /bin/cp -ra dist/. /home1/wisdohkr/public_html/
+    - /bin/chmod 755 /home1/wisdohkr/public_html
+    - /bin/find /home1/wisdohkr/public_html -type d -exec chmod 755 {} \;
+    - /bin/find /home1/wisdohkr/public_html -type f -exec chmod 644 {} \;
