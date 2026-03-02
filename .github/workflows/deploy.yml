@@ -40,3 +40,4 @@ jobs:
           protocol: ftp
           port: 21
           log-level: verbose
+          force-pasv: true
