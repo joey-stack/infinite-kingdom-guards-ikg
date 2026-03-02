@@ -23,11 +23,16 @@ export default {
             animation: {
                 'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                 'scan': 'scan 8s linear infinite',
+                'shimmer': 'shimmer 2s infinite linear',
             },
             keyframes: {
                 scan: {
                     '0%': { backgroundPosition: '0% 0%' },
                     '100%': { backgroundPosition: '0% 100%' },
+                },
+                shimmer: {
+                    '0%': { left: '-100%' },
+                    '100%': { left: '100%' },
                 }
             }
         },

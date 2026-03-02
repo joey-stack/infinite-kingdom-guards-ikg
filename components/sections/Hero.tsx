@@ -1,89 +1,113 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import heroBg from '@/assets/images/hero_bg_3.png';
 
 export const Hero: React.FC = () => {
+  const containerRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-ikg-stealth font-sans">
-      {/* Background Layer (Darkened) */}
+    <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-ikg-stealth font-sans">
+      {/* Background Layer (Darkened with Parallax) */}
       <div className="absolute inset-0 w-full h-full">
         <motion.div
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 3, ease: "easeOut" }}
+          style={{ y, scale }}
+          initial={{ scale: 1.2, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 2.5, ease: "easeOut" }}
           className="w-full h-full"
         >
           <img
             src={heroBg}
             alt="Tactical Background"
-            className="w-full h-full object-cover object-center opacity-90"
+            className="w-full h-full object-cover object-center opacity-80"
             fetchpriority="high"
           />
         </motion.div>
 
         {/* Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 via-40% to-transparent" />
-        <div className="absolute inset-0 bg-scanlines opacity-20 pointer-events-none mix-blend-overlay" />
-        <div className="absolute inset-0 bg-noise opacity-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 via-30% to-transparent" />
+        <div className="absolute inset-0 bg-scanlines opacity-15 pointer-events-none mix-blend-overlay" />
+        <div className="absolute inset-0 bg-noise opacity-5 pointer-events-none" />
       </div>
 
       {/* HI-TECH HUD Elements */}
       <div className="absolute inset-4 border border-white/10 pointer-events-none rounded-sm z-20">
         {/* Top Corners */}
-        <div className="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-ikg-gold/50 rounded-tl-lg" />
-        <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-white/20 rounded-tr-lg" />
+        <div className="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-ikg-gold/40 rounded-tl-lg" />
+        <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-white/10 rounded-tr-lg" />
 
         {/* Bottom Corners */}
-        <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-white/20 rounded-bl-lg" />
-        <div className="absolute bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-ikg-gold/50 rounded-br-lg" />
+        <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-white/10 rounded-bl-lg" />
+        <div className="absolute bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-ikg-gold/40 rounded-br-lg" />
 
         {/* Status Text */}
-
-
         <div className="absolute top-8 right-8 text-right hidden md:block">
-          <span className="text-white/40 font-mono text-xs tracking-widest block">SECURE CONNECTION</span>
-          <span className="text-ikg-gold/80 font-mono text-xs tracking-widest block">ENCRYPTED</span>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 1 }}
+          >
+            <span className="text-white/30 font-mono text-[10px] tracking-widest block mb-1 flex items-center justify-end gap-2">
+              <span className="w-1.5 h-1.5 bg-ikg-gold rounded-full animate-pulse" />
+              SECURE CONNECTION
+            </span>
+            <span className="text-ikg-gold/60 font-mono text-[10px] tracking-[0.3em] block">PROTOCOL: 144.IKG.DEF</span>
+          </motion.div>
         </div>
       </div>
 
-
       {/* Main Content Container */}
-      <div className="relative z-30 h-full max-w-7xl mx-auto px-8 md:px-20 grid grid-cols-1 items-center">
-
+      <div className="relative z-30 h-full max-w-7xl mx-auto px-8 md:px-20 flex items-center">
         {/* Text Content */}
-        <div className="flex flex-col justify-center h-full pt-20 md:pt-0 relative z-40 max-w-3xl">
+        <motion.div
+          style={{ opacity }}
+          className="flex flex-col justify-center h-full pt-20 md:pt-0 relative z-40 max-w-3xl"
+        >
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            transition={{ duration: 1.2, delay: 0.5 }}
           >
-            <h2 className="text-ikg-gold font-mono text-sm md:text-base mb-4 tracking-[0.3em] uppercase pl-1 border-l-2 border-ikg-gold">
-              Global Defense Initiative
-            </h2>
+            <div className="inline-flex items-center gap-4 mb-6">
+              <div className="h-[1px] w-12 bg-ikg-gold" />
+              <h2 className="text-ikg-gold font-mono text-xs md:text-sm tracking-[0.4em] uppercase">
+                Global Defense Initiative
+              </h2>
+            </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-8xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-8 drop-shadow-2xl">
+            <h1 className="text-5xl sm:text-6xl md:text-9xl font-black text-white uppercase tracking-tighter leading-[0.85] mb-8">
               Infinite <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50">Kingdom</span> <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/30">Kingdom</span> <br />
               Guards
             </h1>
 
-            <p className="text-gray-400 text-base md:text-xl font-light max-w-xl mb-12 border-l border-white/20 pl-6 py-2">
-              Elite protection services for a dangerous world. We provide <span className="text-white font-medium">intelligence-driven security</span> for high-value assets and individuals.
+            <p className="text-white/50 text-base md:text-lg font-light max-w-lg mb-12 border-l border-ikg-gold/30 pl-6 py-1 leading-relaxed">
+              Precision-engineered security for high-value assets and elite personal protection. We define the <span className="text-white">new standard</span> of global surveillance.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6">
-              <button className="relative group px-8 py-4 bg-ikg-gold text-black font-bold uppercase tracking-wider clip-path-button hover:bg-white transition-all duration-300">
+            <div className="flex flex-col sm:flex-row gap-8">
+              <button className="relative group px-10 py-5 bg-ikg-gold text-black font-black uppercase tracking-widest clip-path-button overflow-hidden transition-all duration-500 hover:shadow-[0_0_30px_rgba(197,162,109,0.3)]">
                 <span className="relative z-10">Initialize Protocol</span>
-                <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out -z-10" />
+                <div className="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                {/* Shimmer Effect */}
+                <div className="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-25deg] group-hover:animate-shimmer" />
               </button>
 
-              <button className="relative group px-8 py-4 bg-transparent border border-white/20 text-white font-bold uppercase tracking-wider clip-path-button hover:border-ikg-gold/50 transition-all duration-300 backdrop-blur-sm">
-                <span className="group-hover:text-ikg-gold transition-colors">System Access</span>
+              <button className="relative group px-10 py-5 border border-white/10 text-white font-black uppercase tracking-widest clip-path-button overflow-hidden transition-all duration-500 hover:border-ikg-gold hover:text-ikg-gold">
+                <span>System Access</span>
+                <div className="absolute inset-0 bg-ikg-gold/5 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
               </button>
             </div>
           </motion.div>
-        </div>
-
+        </motion.div>
       </div>
 
       {/* Decorative Side Elements */}
@@ -94,7 +118,6 @@ export const Hero: React.FC = () => {
         <div className="h-24 w-[1px] bg-white/30 my-4" />
         <span className="text-white/30 font-mono text-xs rotate-90 origin-right translate-x-2">SCROLL_DOWN</span>
       </div>
-
     </section>
   );
 };

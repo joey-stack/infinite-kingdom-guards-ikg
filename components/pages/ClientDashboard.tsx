@@ -60,63 +60,80 @@ export const ClientDashboard: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen bg-ikg-stealth font-sans text-white selection:bg-ikg-gold selection:text-black">
+        <div className="min-h-screen bg-ikg-stealth font-sans text-white selection:bg-ikg-gold selection:text-black relative overflow-hidden">
             <Navbar />
 
-            <div className="pt-28 pb-20 px-6 md:px-12 max-w-[1600px] mx-auto">
+            {/* Tactical Overlays */}
+            <div className="fixed inset-0 bg-scanlines opacity-[0.03] pointer-events-none z-[100]" />
+            <div className="fixed inset-0 bg-gradient-to-b from-transparent via-ikg-gold/[0.02] to-transparent pointer-events-none z-[99] animate-scan" style={{ backgroundSize: '100% 20%' }} />
+
+            <div className="pt-28 pb-20 px-6 md:px-12 max-w-[1600px] mx-auto relative z-10">
                 {/* Dashboard Header */}
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6 border-b border-white/5 pb-8">
                     <div>
-                        <div className="flex items-center gap-3 mb-2">
-                            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                            <span className="text-xs font-mono text-green-500 uppercase tracking-widest">System Online</span>
+                        <div className="flex items-center gap-3 mb-3">
+                            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
+                            <span className="text-[10px] font-mono text-green-500 uppercase tracking-[0.3em]">Link_Established: Secure</span>
                         </div>
-                        <h1 className="text-3xl md:text-5xl font-black uppercase tracking-tight">
+                        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">
                             Command <span className="text-ikg-gold">Center</span>
                         </h1>
-                        <p className="text-white/40 font-mono text-sm mt-2">
-                            Welcome, <span className="text-white">{client.name}</span> // ID: <span className="text-ikg-gold">{client.id}</span>
+                        <p className="text-white/30 font-mono text-xs mt-3 flex items-center gap-4">
+                            <span>OPERATIVE: <span className="text-white uppercase">{client.name}</span></span>
+                            <span className="w-1 h-1 bg-white/20 rounded-full" />
+                            <span>NODE_ID: <span className="text-ikg-gold">{client.id}</span></span>
                         </p>
                     </div>
 
                     <div className="flex items-center gap-4">
                         <Link
                             to="/booking"
-                            className="px-6 py-3 bg-ikg-gold text-black font-bold uppercase text-xs tracking-widest hover:bg-white transition-colors flex items-center gap-2"
+                            className="group relative px-8 py-4 bg-ikg-gold text-black font-black uppercase text-xs tracking-widest transition-all duration-300 hover:shadow-[0_0_20px_rgba(197,162,109,0.2)]"
                         >
-                            <Zap className="w-4 h-4" />
-                            New Deployment
+                            <span className="relative z-10 flex items-center gap-2">
+                                <Zap className="w-4 h-4" />
+                                New Deployment
+                            </span>
+                            <div className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
                         </Link>
                         <button
                             onClick={handleLogout}
-                            className="px-6 py-3 border border-white/20 text-white/60 font-bold uppercase text-xs tracking-widest hover:border-red-500 hover:text-red-500 transition-colors flex items-center gap-2"
+                            className="px-8 py-4 border border-white/10 text-white/40 font-black uppercase text-xs tracking-widest hover:border-red-500/50 hover:text-red-500 transition-all duration-300"
                         >
-                            <LogOut className="w-4 h-4" />
-                            Sign Out
+                            <span className="flex items-center gap-2">
+                                <LogOut className="w-4 h-4" />
+                                Terminate Session
+                            </span>
                         </button>
                     </div>
                 </div>
 
                 {/* KPI Cards */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
                     {[
-                        { label: 'Active Deployments', value: activeDeployments, icon: Activity, color: 'text-green-500', bg: 'bg-green-500/10' },
-                        { label: 'Personnel Deployed', value: totalGuards, icon: Users, color: 'text-blue-400', bg: 'bg-blue-500/10' },
-                        { label: 'Threat Level', value: 'ELEVATED', icon: AlertTriangle, color: 'text-orange-400', bg: 'bg-orange-500/10' },
-                        { label: 'Total Investment', value: `$${totalCost.toLocaleString()}`, icon: DollarSign, color: 'text-ikg-gold', bg: 'bg-ikg-gold/10' }
+                        { label: 'Active Deployments', value: activeDeployments.toString().padStart(2, '0'), icon: Activity, color: 'text-green-500', bg: 'bg-green-500/5', border: 'border-green-500/20' },
+                        { label: 'Personnel Deployed', value: totalGuards.toString().padStart(2, '0'), icon: Users, color: 'text-blue-400', bg: 'bg-blue-500/5', border: 'border-blue-500/20' },
+                        { label: 'Threat Level', value: 'ELEVATED', icon: AlertTriangle, color: 'text-orange-400', bg: 'bg-orange-400/5', border: 'border-orange-400/20' },
+                        { label: 'Total Investment', value: `$${totalCost.toLocaleString()}`, icon: DollarSign, color: 'text-ikg-gold', bg: 'bg-ikg-gold/5', border: 'border-ikg-gold/20' }
                     ].map((kpi, idx) => (
                         <motion.div
                             key={idx}
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.1 }}
-                            className="bg-white/[0.02] border border-white/10 p-6 hover:border-white/20 transition-colors"
+                            className={`bg-white/[0.01] border ${kpi.border} p-8 hover:bg-white/[0.03] transition-all duration-500 group relative overflow-hidden`}
                         >
-                            <div className={`p-2 ${kpi.bg} rounded w-fit mb-4`}>
+                            <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
+                                <kpi.icon className="w-12 h-12" />
+                            </div>
+                            <div className={`p-2 ${kpi.bg} rounded-sm w-fit mb-6 border border-white/5`}>
                                 <kpi.icon className={`w-5 h-5 ${kpi.color}`} />
                             </div>
-                            <div className="text-2xl md:text-3xl font-black text-white mb-1">{kpi.value}</div>
-                            <div className="text-xs font-mono text-white/40 uppercase tracking-widest">{kpi.label}</div>
+                            <div className="text-3xl md:text-4xl font-black text-white mb-2 tracking-tighter">{kpi.value}</div>
+                            <div className="text-[10px] font-mono text-white/30 uppercase tracking-[0.2em]">{kpi.label}</div>
+
+                            {/* Decorative corner */}
+                            <div className={`absolute bottom-0 right-0 w-8 h-8 border-r border-b opacity-0 group-hover:opacity-100 transition-opacity ${kpi.border}`} />
                         </motion.div>
                     ))}
                 </div>
@@ -188,25 +205,47 @@ export const ClientDashboard: React.FC = () => {
                         {/* Quick Intel Sidebar */}
                         <div className="space-y-6">
                             {/* Threat Level */}
-                            <div className="bg-orange-500/5 border border-orange-500/20 p-6">
-                                <h4 className="text-sm font-bold uppercase flex items-center gap-2 text-orange-400 mb-4">
+                            <div className="bg-orange-400/[0.03] border border-orange-400/10 p-8 rounded-sm group">
+                                <h4 className="text-xs font-black uppercase flex items-center gap-3 text-orange-400 mb-8 tracking-[0.2em]">
                                     <AlertTriangle className="w-4 h-4" />
                                     Threat Assessment
                                 </h4>
-                                <div className="space-y-3">
-                                    <div className="flex justify-between text-xs">
-                                        <span className="text-white/60">Regional Risk</span>
-                                        <span className="font-mono text-orange-400">MODERATE</span>
+                                <div className="space-y-8">
+                                    <div className="space-y-3">
+                                        <div className="flex justify-between text-[10px] font-mono">
+                                            <span className="text-white/40">Regional Risk Vector</span>
+                                            <span className="text-orange-400">0.68 / MODERATE</span>
+                                        </div>
+                                        <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
+                                            <motion.div
+                                                initial={{ width: 0 }}
+                                                whileInView={{ width: '68%' }}
+                                                transition={{ duration: 1.5, ease: "easeOut" }}
+                                                className="h-full bg-gradient-to-r from-green-500 via-yellow-400 to-orange-400"
+                                            />
+                                        </div>
                                     </div>
-                                    <div className="w-full h-2 bg-white/5 rounded overflow-hidden">
-                                        <div className="w-[60%] h-full bg-gradient-to-r from-green-500 via-yellow-400 to-orange-500 rounded"></div>
+
+                                    <div className="space-y-3">
+                                        <div className="flex justify-between text-[10px] font-mono">
+                                            <span className="text-white/40">Cyber Perimeter Strain</span>
+                                            <span className="text-red-500">0.84 / CRITICAL</span>
+                                        </div>
+                                        <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
+                                            <motion.div
+                                                initial={{ width: 0 }}
+                                                whileInView={{ width: '84%' }}
+                                                transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
+                                                className="h-full bg-gradient-to-r from-orange-400 to-red-600 shadow-[0_0_10px_rgba(220,38,38,0.3)]"
+                                            />
+                                        </div>
                                     </div>
-                                    <div className="flex justify-between text-xs">
-                                        <span className="text-white/60">Cyber Threat</span>
-                                        <span className="font-mono text-red-400">HIGH</span>
-                                    </div>
-                                    <div className="w-full h-2 bg-white/5 rounded overflow-hidden">
-                                        <div className="w-[80%] h-full bg-gradient-to-r from-green-500 via-orange-400 to-red-500 rounded"></div>
+
+                                    <div className="pt-4 border-t border-white/5">
+                                        <div className="flex items-center gap-4 text-[9px] font-mono text-white/20 group-hover:text-white/40 transition-colors">
+                                            <Activity className="w-3 h-3 animate-pulse" />
+                                            ANALYZING_LIVE_TELEMETRY...
+                                        </div>
                                     </div>
                                 </div>
                             </div>
