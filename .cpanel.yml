@@ -5,13 +5,13 @@ deployment:
     - /bin/echo "Source (dist) contents:"
     - /bin/ls -F dist/
     - /bin/echo "Cleaning target..."
-    - /bin/rm -rf /home1/wisdohkr/infinitekingdomguards.com/assets
-    - /bin/rm -f /home1/wisdohkr/infinitekingdomguards.com/.htaccess
-    - /bin/cp -ra dist/. /home1/wisdohkr/infinitekingdomguards.com/
+    - /bin/rm -rf /home/wisdohkr/public_html/infinitekingdomguards.com/assets
+    - /bin/rm -f /home/wisdohkr/public_html/infinitekingdomguards.com/.htaccess
+    - /bin/cp -ra dist/. /home/wisdohkr/public_html/infinitekingdomguards.com/
     - /bin/echo "Deployment complete. Final Structure (Root):"
-    - /bin/ls -F /home1/wisdohkr/infinitekingdomguards.com/
+    - /bin/ls -F /home/wisdohkr/public_html/infinitekingdomguards.com/
     - /bin/echo "Final Structure (Assets):"
-    - /bin/ls -F /home1/wisdohkr/infinitekingdomguards.com/assets/
-    - /bin/chmod 755 /home1/wisdohkr/infinitekingdomguards.com
-    - /bin/find /home1/wisdohkr/infinitekingdomguards.com -type d -exec chmod 755 {} \;
-    - /bin/find /home1/wisdohkr/infinitekingdomguards.com -type f -exec chmod 644 {} \;
+    - /bin/ls -F /home/wisdohkr/public_html/infinitekingdomguards.com/assets/
+    - /bin/chmod 755 /home/wisdohkr/public_html/infinitekingdomguards.com
+    - /bin/find /home/wisdohkr/public_html/infinitekingdomguards.com -type d -exec chmod 755 {} \;
+    - /bin/find /home/wisdohkr/public_html/infinitekingdomguards.com -type f -exec chmod 644 {} \;
