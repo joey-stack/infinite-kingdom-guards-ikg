@@ -2,13 +2,13 @@
 deployment:
   tasks:
     - /bin/echo "Starting deployment..."
-    - /bin/rm -f /home1/wisdohkr/infinitekingdomgaurds.com/.htaccess
-    - /bin/cp -ra dist/. /home1/wisdohkr/infinitekingdomgaurds.com/
-    - /bin/rm -f /home1/wisdohkr/infinitekingdomgaurds.com/index.tsx
-    - /bin/rm -rf /home1/wisdohkr/infinitekingdomgaurds.com/components
-    - /bin/rm -rf /home1/wisdohkr/infinitekingdomgaurds.com/hooks
-    - /bin/rm -rf /home1/wisdohkr/infinitekingdomgaurds.com/utils
-    - /bin/chmod 755 /home1/wisdohkr/infinitekingdomgaurds.com
-    - /bin/find /home1/wisdohkr/infinitekingdomgaurds.com -type d -exec chmod 755 {} \;
-    - /bin/find /home1/wisdohkr/infinitekingdomgaurds.com -type f -exec chmod 644 {} \;
+    - /bin/rm -f /home1/wisdohkr/public_html/.htaccess
+    - /bin/cp -ra dist/. /home1/wisdohkr/public_html/
+    - /bin/rm -f /home1/wisdohkr/public_html/index.tsx
+    - /bin/rm -rf /home1/wisdohkr/public_html/components
+    - /bin/rm -rf /home1/wisdohkr/public_html/hooks
+    - /bin/rm -rf /home1/wisdohkr/public_html/utils
+    - /bin/chmod 755 /home1/wisdohkr/public_html
+    - /bin/find /home1/wisdohkr/public_html -type d -exec chmod 755 {} \;
+    - /bin/find /home1/wisdohkr/public_html -type f -exec chmod 644 {} \;
     - /bin/echo "Deployment complete."
