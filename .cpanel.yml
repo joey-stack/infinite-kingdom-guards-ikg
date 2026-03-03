@@ -2,6 +2,7 @@
 deployment:
   tasks:
     - /bin/echo "Starting deployment..."
+    - /bin/rm -f /home1/wisdohkr/infinitekingdomgaurds.com/.htaccess
     - /bin/cp -ra dist/. /home1/wisdohkr/infinitekingdomgaurds.com/
     - /bin/rm -f /home1/wisdohkr/infinitekingdomgaurds.com/index.tsx
     - /bin/rm -rf /home1/wisdohkr/infinitekingdomgaurds.com/components
