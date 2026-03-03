@@ -2,14 +2,16 @@
 deployment:
   tasks:
     - /bin/echo "Starting deployment..."
+    - /bin/echo "Source (dist) contents:"
+    - /bin/ls -F dist/
+    - /bin/echo "Cleaning target..."
     - /bin/rm -rf /home1/wisdohkr/infinitekingdomguards.com/assets
     - /bin/rm -f /home1/wisdohkr/infinitekingdomguards.com/.htaccess
     - /bin/cp -ra dist/. /home1/wisdohkr/infinitekingdomguards.com/
-    - /bin/cp -ra dist/assets /home1/wisdohkr/infinitekingdomguards.com/
-    - /bin/rm -f /home1/wisdohkr/infinitekingdomguards.com/index.tsx
-    - /bin/echo "Final Directory Listing:"
+    - /bin/echo "Deployment complete. Final Structure (Root):"
     - /bin/ls -F /home1/wisdohkr/infinitekingdomguards.com/
+    - /bin/echo "Final Structure (Assets):"
+    - /bin/ls -F /home1/wisdohkr/infinitekingdomguards.com/assets/
     - /bin/chmod 755 /home1/wisdohkr/infinitekingdomguards.com
     - /bin/find /home1/wisdohkr/infinitekingdomguards.com -type d -exec chmod 755 {} \;
     - /bin/find /home1/wisdohkr/infinitekingdomguards.com -type f -exec chmod 644 {} \;
-    - /bin/echo "Deployment complete."
