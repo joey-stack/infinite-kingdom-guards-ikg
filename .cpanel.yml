@@ -2,12 +2,13 @@
 deployment:
   tasks:
     - /bin/echo "Starting deployment..."
+    - /bin/rm -rf /home1/wisdohkr/infinitekingdomguards.com/assets
     - /bin/rm -f /home1/wisdohkr/infinitekingdomguards.com/.htaccess
     - /bin/cp -ra dist/. /home1/wisdohkr/infinitekingdomguards.com/
+    - /bin/cp -ra dist/assets /home1/wisdohkr/infinitekingdomguards.com/
     - /bin/rm -f /home1/wisdohkr/infinitekingdomguards.com/index.tsx
-    - /bin/rm -rf /home1/wisdohkr/infinitekingdomguards.com/components
-    - /bin/rm -rf /home1/wisdohkr/infinitekingdomguards.com/hooks
-    - /bin/rm -rf /home1/wisdohkr/infinitekingdomguards.com/utils
+    - /bin/echo "Final Directory Listing:"
+    - /bin/ls -F /home1/wisdohkr/infinitekingdomguards.com/
     - /bin/chmod 755 /home1/wisdohkr/infinitekingdomguards.com
     - /bin/find /home1/wisdohkr/infinitekingdomguards.com -type d -exec chmod 755 {} \;
     - /bin/find /home1/wisdohkr/infinitekingdomguards.com -type f -exec chmod 644 {} \;
