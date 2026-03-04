@@ -26,9 +26,9 @@ export const Hero: React.FC = () => {
         >
           <img
             src={heroBg}
-            alt="Tactical Background"
+            alt="Elite Tactical Guard Surveillance - Infinite Kingdom Guards"
             className="w-full h-full object-cover object-center opacity-80"
-            fetchpriority="high"
+            fetchPriority="high"
           />
         </motion.div>
 
@@ -65,11 +65,11 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-30 h-full max-w-7xl mx-auto px-8 md:px-20 flex items-center">
+      <div className="relative z-30 h-full max-w-7xl mx-auto px-6 md:px-20 flex items-center">
         {/* Text Content */}
         <motion.div
           style={{ opacity }}
-          className="flex flex-col justify-center h-full pt-20 md:pt-0 relative z-40 max-w-3xl"
+          className="flex flex-col justify-center h-full pt-24 md:pt-0 relative z-40 max-w-3xl"
         >
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -77,31 +77,31 @@ export const Hero: React.FC = () => {
             transition={{ duration: 1.2, delay: 0.5 }}
           >
             <div className="inline-flex items-center gap-4 mb-6">
-              <div className="h-[1px] w-12 bg-ikg-gold" />
-              <h2 className="text-ikg-gold font-mono text-xs md:text-sm tracking-[0.4em] uppercase">
+              <div className="h-[1px] w-8 md:w-12 bg-ikg-gold" />
+              <h2 className="text-ikg-gold font-mono text-[10px] md:text-sm tracking-[0.4em] uppercase">
                 Global Defense Initiative
               </h2>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-9xl font-black text-white uppercase tracking-tighter leading-[0.85] mb-8">
+            <h1 className="text-4xl sm:text-6xl md:text-9xl font-black text-white uppercase tracking-tighter leading-[0.85] mb-8">
               Infinite <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/30">Kingdom</span> <br />
               Guards
             </h1>
 
-            <p className="text-white/50 text-base md:text-lg font-light max-w-lg mb-12 border-l border-ikg-gold/30 pl-6 py-1 leading-relaxed">
+            <p className="text-white/50 text-sm md:text-lg font-light max-w-lg mb-10 md:12 border-l border-ikg-gold/30 pl-6 py-1 leading-relaxed">
               Precision-engineered security for high-value assets and elite personal protection. We define the <span className="text-white">new standard</span> of global surveillance.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-8">
-              <button className="relative group px-10 py-5 bg-ikg-gold text-black font-black uppercase tracking-widest clip-path-button overflow-hidden transition-all duration-500 hover:shadow-[0_0_30px_rgba(197,162,109,0.3)]">
+            <div className="flex flex-col sm:flex-row gap-4 md:8">
+              <button className="relative group px-8 md:10 py-4 md:5 bg-ikg-gold text-black font-black uppercase text-sm md:base tracking-widest clip-path-button overflow-hidden transition-all duration-500 hover:shadow-[0_0_30px_rgba(197,162,109,0.3)]">
                 <span className="relative z-10">Initialize Protocol</span>
                 <div className="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                 {/* Shimmer Effect */}
                 <div className="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-25deg] group-hover:animate-shimmer" />
               </button>
 
-              <button className="relative group px-10 py-5 border border-white/10 text-white font-black uppercase tracking-widest clip-path-button overflow-hidden transition-all duration-500 hover:border-ikg-gold hover:text-ikg-gold">
+              <button className="relative group px-8 md:10 py-4 md:5 border border-white/10 text-white font-black uppercase text-sm md:base tracking-widest clip-path-button overflow-hidden transition-all duration-500 hover:border-ikg-gold hover:text-ikg-gold">
                 <span>System Access</span>
                 <div className="absolute inset-0 bg-ikg-gold/5 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
               </button>

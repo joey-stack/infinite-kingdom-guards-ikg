@@ -10,9 +10,9 @@ export const Footer: React.FC = () => {
                 <div className="col-span-1 md:col-span-1">
                     <div className="flex items-center gap-2 mb-6">
                         <img
-                            src="/assets/images/infinite kingdom guards logo.svg"
-                            alt="IKG Logo"
-                            className="h-12 w-auto"
+                            src="/assets/images/infinite-kingdom-guards-logo.svg"
+                            alt="Infinite Kingdom Guards Logo"
+                            className="h-10 md:h-12 w-auto"
                         />
                         <span className="text-white font-bold tracking-tighter uppercase text-xl">IKG Ltd</span>
                     </div>

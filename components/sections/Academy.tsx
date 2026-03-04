@@ -47,7 +47,7 @@ export const Academy: React.FC = () => {
 
             <div className="max-w-7xl mx-auto px-6">
                 {/* Section Header */}
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-16 gap-6">
                     <div>
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
@@ -56,13 +56,13 @@ export const Academy: React.FC = () => {
                             className="flex items-center gap-2 mb-4"
                         >
                             <Lock className="w-4 h-4 text-ikg-gold" />
-                            <span className="text-ikg-gold font-mono uppercase tracking-[0.2em] text-sm">Security Academy</span>
+                            <span className="text-ikg-gold font-mono uppercase tracking-[0.2em] text-[10px] md:text-sm">Security Academy</span>
                         </motion.div>
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-4xl md:text-6xl font-black text-white uppercase leading-none"
+                            className="text-3xl md:text-6xl font-black text-white uppercase leading-none"
                         >
                             Forge Your <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-400 to-gray-600">Legacy</span>
@@ -73,7 +73,7 @@ export const Academy: React.FC = () => {
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="max-w-md text-white/40 font-mono text-xs text-right md:text-left leading-relaxed"
+                        className="max-w-md text-white/40 font-mono text-[10px] md:text-xs text-left leading-relaxed border-l border-white/10 pl-4 md:pl-0 md:border-0"
                     >
                         [SYSTEM_MSG]: THE IKG ACADEMY BUILDS ELITE PROTECTORS THROUGH RIGOROUS PHYSICAL CONDITIONING, TACTICAL STUDY, AND REAL-WORLD STRESS INOCULATION.
                     </motion.div>
@@ -90,20 +90,20 @@ export const Academy: React.FC = () => {
                     {/* Main Feature - Spans 2x2 */}
                     <motion.div
                         variants={itemVariants}
-                        className="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-sm border border-white/10 h-[516px]"
+                        className="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-sm border border-white/10 h-[400px] md:h-[516px]"
                     >
                         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10" />
                         <img
                             src={img}
-                            alt="Academy Training"
+                            alt="Infinite Kingdom Guards Elite Academy Training Program"
                             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 grayscale-[50%] group-hover:grayscale-0"
                             loading="lazy"
                         />
-                        <div className="absolute bottom-0 left-0 p-10 z-20 w-full">
-                            <h3 className="text-4xl font-black text-white uppercase mb-3 tracking-tighter">Elite Status</h3>
-                            <p className="text-white/60 mb-8 max-w-sm font-mono text-sm leading-relaxed">JOIN THE RANKS OF THE WORLD'S MOST DISCIPLINED SECURITY FORCE. RECRUITMENT IS OPEN FOR BATCH 24.</p>
+                        <div className="absolute bottom-0 left-0 p-6 md:p-10 z-20 w-full">
+                            <h3 className="text-2xl md:text-4xl font-black text-white uppercase mb-3 tracking-tighter">Elite Status</h3>
+                            <p className="text-white/60 mb-6 md:mb-8 max-w-sm font-mono text-[10px] md:text-sm leading-relaxed">JOIN THE RANKS OF THE WORLD'S MOST DISCIPLINED SECURITY FORCE. RECRUITMENT IS OPEN FOR BATCH 24.</p>
 
-                            <button className="group relative flex items-center gap-4 px-8 py-4 bg-white text-black font-black uppercase tracking-widest hover:bg-ikg-gold transition-all duration-300 rounded-sm">
+                            <button className="group relative flex items-center gap-4 px-6 md:px-8 py-3 md:py-4 bg-white text-black font-black uppercase text-xs md:text-sm tracking-widest hover:bg-ikg-gold transition-all duration-300 rounded-sm">
                                 <span className="relative z-10">Enroll Now</span>
                                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2 relative z-10" />
                                 <div className="absolute inset-0 bg-ikg-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />

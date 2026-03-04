@@ -42,8 +42,12 @@ export const Navbar: React.FC = () => {
             <div className="max-w-7xl mx-auto px-6 md:px-20 flex justify-between items-center">
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-2 group">
-                    <Shield className="w-8 h-8 text-ikg-gold transition-transform group-hover:scale-110" />
-                    <span className="font-orbitron font-black text-xl text-white tracking-wider">
+                    <img
+                        src="/assets/images/infinite-kingdom-guards-logo.svg"
+                        alt="IKG Logo"
+                        className="w-10 h-10 transition-transform group-hover:scale-110"
+                    />
+                    <span className="font-orbitron font-black text-lg md:text-xl text-white tracking-wider">
                         INFINITE <span className="text-ikg-gold">KINGDOM</span>
                     </span>
                 </Link>
