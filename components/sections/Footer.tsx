@@ -12,9 +12,8 @@ export const Footer: React.FC = () => {
                         <img
                             src="/assets/images/infinite-kingdom-guards-logo.svg"
                             alt="Infinite Kingdom Guards Logo"
-                            className="h-10 md:h-12 w-auto"
+                            className="h-12 md:h-16 w-auto"
                         />
-                        <span className="text-white font-bold tracking-tighter uppercase text-xl">IKG Ltd</span>
                     </div>
                     <p className="text-white/40 mb-6 font-mono text-xs">
                         RC 12345678<br />
