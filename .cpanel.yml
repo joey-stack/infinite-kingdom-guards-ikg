@@ -2,11 +2,8 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home1/wisdohkr/infinitekingdomguards.com/
-    - /bin/echo "Deploying to $DEPLOYPATH"
-    - /bin/rm -rf $DEPLOYPATH/assets
     - /bin/cp dist/index.html $DEPLOYPATH/index.html
-    - /bin/cp -R dist/assets $DEPLOYPATH
+    - /bin/cp -rf dist/assets $DEPLOYPATH/
     - /bin/chmod 755 $DEPLOYPATH
-    - /bin/find $DEPLOYPATH -type d -exec chmod 755 {} \;
-    - /bin/find $DEPLOYPATH -type f -exec chmod 644 {} \;
-    - /bin/echo "Deployment complete."
+    - /bin/find $DEPLOYPATH/assets -type d -exec chmod 755 {} \;
+    - /bin/find $DEPLOYPATH/assets -type f -exec chmod 644 {} \;
