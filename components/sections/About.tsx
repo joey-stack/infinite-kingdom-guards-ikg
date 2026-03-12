@@ -39,7 +39,7 @@ export const About: React.FC = () => {
 
                     <div className="mt-12 flex gap-6">
                         <div className="border border-white/10 bg-white/5 p-6 backdrop-blur-sm min-w-[140px] transition-colors hover:border-ikg-gold hover:bg-white/10 group cursor-default">
-                            <span className="block text-4xl font-bold mb-1 text-ikg-gold transition-transform group-hover:scale-110 origin-left">100+</span>
+                            <span className="block text-4xl font-bold mb-1 text-ikg-gold transition-transform group-hover:scale-110 origin-left">40+</span>
                             <span className="text-[10px] font-mono uppercase text-gray-400 tracking-widest group-hover:text-white transition-colors">Years Experience</span>
                         </div>
                         <div className="border border-white/10 bg-white/5 p-6 backdrop-blur-sm min-w-[140px] transition-colors hover:border-ikg-gold hover:bg-white/10 group cursor-default">
