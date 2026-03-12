@@ -65,7 +65,7 @@ export const Navbar: React.FC = () => {
                                 const component = link.href.split('/')[1] || 'Home';
                                 // This triggers the dynamic import if not already loaded
                                 if (link.href !== '/') {
-                                    import(`../pages/${component.charAt(0).toUpperCase() + component.slice(1)}Page`).catch(() => { });
+                                    import(`../pages/${component.charAt(0).toUpperCase() + component.slice(1)}Page.tsx`).catch(() => { });
                                 }
                             }}
                             className={`text-xs font-mono uppercase tracking-wider transition-colors ${
