@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence, stagger } from 'framer-motion';
 import { Menu, X, Shield, Instagram, Twitter, Linkedin, Phone, Mail, Globe } from 'lucide-react';
 import { Button } from './Button';
@@ -7,6 +7,7 @@ import { Button } from './Button';
 export const Navbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -67,7 +68,11 @@ export const Navbar: React.FC = () => {
                                     import(`../pages/${component.charAt(0).toUpperCase() + component.slice(1)}Page`).catch(() => { });
                                 }
                             }}
-                            className="text-xs font-mono text-white/70 hover:text-ikg-gold uppercase tracking-wider transition-colors"
+                            className={`text-xs font-mono uppercase tracking-wider transition-colors ${
+                                location.pathname === link.href
+                                    ? 'text-ikg-gold'
+                                    : 'text-white/70 hover:text-ikg-gold'
+                            }`}
                         >
                             {link.name}
                         </Link>
@@ -153,8 +158,12 @@ export const Navbar: React.FC = () => {
                                             className="group flex items-center gap-4"
                                             onClick={() => setIsMobileMenuOpen(false)}
                                         >
-                                            <span className="text-ikg-gold font-mono text-xs opacity-50 group-hover:opacity-100 transition-opacity">0{idx + 1}</span>
-                                            <span className="text-4xl font-black uppercase tracking-tight text-white group-hover:text-ikg-gold transition-colors">
+                                            <span className={`text-ikg-gold font-mono text-xs transition-opacity ${
+                                                location.pathname === link.href ? 'opacity-100' : 'opacity-50 group-hover:opacity-100'
+                                            }`}>0{idx + 1}</span>
+                                            <span className={`text-4xl font-black uppercase tracking-tight transition-colors group-hover:text-ikg-gold ${
+                                                location.pathname === link.href ? 'text-ikg-gold' : 'text-white'
+                                            }`}>
                                                 {link.name}
                                             </span>
                                         </Link>
