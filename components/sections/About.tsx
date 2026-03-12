@@ -4,11 +4,11 @@ import professionalImg from '@/assets/images/Professional_Portrait.jpg';
 
 export const About: React.FC = () => {
     return (
-        <section className="bg-ikg-stealth text-white py-24 px-6 md:px-20 relative overflow-hidden" id="about">
+        <section className="bg-ikg-stealth text-white py-24 relative overflow-hidden" id="about">
             {/* Background Grid */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
-            <div className="mx-auto flex flex-col lg:flex-row gap-16 items-center relative z-10 w-full">
+            <div className="max-w-7xl mx-auto px-6 md:px-20 flex flex-col lg:flex-row gap-16 items-center relative z-10">
 
                 {/* Typography Side */}
                 <motion.div
