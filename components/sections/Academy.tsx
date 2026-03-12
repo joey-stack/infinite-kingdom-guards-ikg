@@ -65,8 +65,7 @@ export const Academy: React.FC = () => {
                             viewport={{ once: true }}
                             className="text-3xl md:text-6xl font-black text-white uppercase leading-none"
                         >
-                            Forge Your <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-400 to-gray-600">Legacy</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-400 to-gray-600">Security Academy</span>
                         </motion.h2>
                     </div>
 
