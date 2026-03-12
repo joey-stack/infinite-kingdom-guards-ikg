@@ -235,8 +235,8 @@ export const BookingPage: React.FC = () => {
                 onClose={() => setShowPaymentModal(false)}
             />
 
-            <div className="pt-32 pb-20 px-6 md:px-20 max-w-7xl mx-auto">
-                <div className="text-center mb-16">
+            <div className="pt-32 pb-20 relative">
+                <div className="text-center mb-16 max-w-7xl mx-auto px-6 md:px-20 w-full">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -253,7 +253,7 @@ export const BookingPage: React.FC = () => {
                     </p>
                 </div>
 
-                <div className="flex flex-col lg:flex-row gap-12 items-start">
+                <div className="max-w-7xl mx-auto px-6 md:px-20 w-full flex flex-col lg:flex-row gap-12 items-start">
 
                     {/* Configuration Form */}
                     <motion.div

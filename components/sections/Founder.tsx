@@ -16,7 +16,7 @@ export const Founder: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-ikg-stealth via-ikg-stealth/80 to-transparent" />
         </div>
 
-        <div className="relative z-10 flex flex-col justify-end h-full p-8 md:p-24 max-w-7xl mx-auto w-full">
+        <div className="relative z-10 flex flex-col justify-end h-full py-8 md:py-24 max-w-7xl mx-auto px-6 md:px-20 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
                 <div>
                     <span className="font-mono text-xs text-ikg-gold tracking-widest uppercase mb-4 block">The Visionary</span>

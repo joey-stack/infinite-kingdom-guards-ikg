@@ -63,7 +63,7 @@ export const Services: React.FC = () => {
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-6 mb-12 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 md:px-20 mb-12 flex justify-between items-center">
         <div>
           <span className="text-ikg-gold font-mono text-xs tracking-widest uppercase mb-4 block">Operative Solutions / Capabilities</span>
         </div>

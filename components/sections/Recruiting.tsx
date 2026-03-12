@@ -7,6 +7,7 @@ import recruitingImg from '@/assets/images/feature-guard.png';
 export const Recruiting: React.FC = () => {
     return (
         <section id="academy" className="h-screen w-full flex flex-col md:flex-row bg-ikg-stealth overflow-hidden relative">
+            <div className="max-w-7xl mx-auto px-6 md:px-20 w-full flex flex-col md:flex-row h-full">
 
             {/* Image Side (Left on Desktop, Top on Mobile) */}
             <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden group">
@@ -71,6 +72,8 @@ export const Recruiting: React.FC = () => {
                         Apply Now <ArrowRight className="w-5 h-5 relative z-10 ml-4" />
                     </Button>
                 </motion.div>
+            </div>
+
             </div>
 
         </section>

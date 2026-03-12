@@ -64,8 +64,8 @@ export const FieldReportsPage: React.FC = () => {
             </div>
 
             {/* Reports Feed */}
-            <section className="py-24 px-6 md:px-20 max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row gap-16">
+            <section className="py-24 relative">
+                <div className="max-w-7xl mx-auto px-6 md:px-20 w-full flex flex-col md:flex-row gap-16">
 
                     {/* Main Feed */}
                     <div className="md:w-2/3 space-y-12">

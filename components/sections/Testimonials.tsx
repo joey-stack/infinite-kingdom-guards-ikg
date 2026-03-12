@@ -28,7 +28,7 @@ export const Testimonials: React.FC = () => {
     ];
 
     return (
-        <section id="field-reports" className="py-24 bg-ikg-stealth px-6 md:px-20 relative overflow-hidden border-t border-white/5">
+        <section id="field-reports" className="py-24 bg-ikg-stealth relative overflow-hidden border-t border-white/5">
             {/* Background Map Visualization */}
             <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +41,7 @@ export const Testimonials: React.FC = () => {
                 </svg>
             </div>
 
-            <div className="max-w-7xl mx-auto relative z-10">
+            <div className="max-w-7xl mx-auto px-6 md:px-20 relative z-10 w-full">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div>

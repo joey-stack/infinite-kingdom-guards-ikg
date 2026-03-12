@@ -54,8 +54,8 @@ export const AboutPage: React.FC = () => {
             </section>
 
             {/* Mission & Vision - Split Layout */}
-            <section className="py-24 px-6 md:px-20 max-w-7xl mx-auto">
-                <div className="flex flex-col lg:flex-row gap-20 items-center">
+            <section className="py-24 relative">
+                <div className="flex flex-col lg:flex-row gap-20 items-center max-w-7xl mx-auto px-6 md:px-20 w-full">
                     <div className="lg:w-1/2">
                         <h2 className="text-ikg-gold font-mono text-sm tracking-widest uppercase mb-6 flex items-center gap-3">
                             <Target className="w-4 h-4" />
@@ -135,9 +135,8 @@ export const AboutPage: React.FC = () => {
                 </div>
             </section>
 
-            {/* Leadership */}
-            <section className="py-24 max-w-7xl mx-auto px-6 md:px-20">
-                <div className="flex flex-col md:flex-row items-stretch gap-0 bg-ikg-stealth border border-white/10 shadow-2xl">
+            <section className="py-24 relative">
+                <div className="max-w-7xl mx-auto px-6 md:px-20 w-full flex flex-col md:flex-row items-stretch gap-0 bg-ikg-stealth border border-white/10 shadow-2xl">
                     <div className="w-full md:w-2/5 relative overflow-hidden group min-h-[500px]">
                         <div className="absolute inset-0 bg-ikg-gold/0 group-hover:bg-ikg-gold/10 transition-colors z-10 text-center"></div>
                         <img

@@ -36,13 +36,14 @@ export const ServiceDetail: React.FC = () => {
         <div className="min-h-screen bg-ikg-stealth font-sans">
             <Navbar />
 
-            <main className="pt-24 pb-12 px-6 md:px-20 max-w-7xl mx-auto">
-                <Link to="/" className="inline-flex items-center text-white/50 hover:text-ikg-gold transition-colors mb-8 group">
-                    <ArrowLeft size={20} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-                    Back to Command
-                </Link>
+            <main className="pt-24 pb-12 relative w-full">
+                <div className="max-w-7xl mx-auto px-6 md:px-20 w-full">
+                    <Link to="/" className="inline-flex items-center text-white/50 hover:text-ikg-gold transition-colors mb-8 group">
+                        <ArrowLeft size={20} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+                        Back to Command
+                    </Link>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     {/* Content Side */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -146,6 +147,7 @@ export const ServiceDetail: React.FC = () => {
                             </form>
                         )}
                     </motion.div>
+                    </div>
                 </div>
             </main>
 

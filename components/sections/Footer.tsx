@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
     return (
-        <footer className="bg-black border-t border-white/10 pt-20 pb-10 px-6 md:px-20 font-sans text-sm">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <footer className="bg-black border-t border-white/10 pt-20 pb-10 font-sans text-sm">
+            <div className="max-w-7xl mx-auto px-6 md:px-20 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 {/* Brand Column */}
                 <div className="col-span-1 md:col-span-1">
                     <div className="flex items-center gap-2 mb-6">
@@ -70,7 +70,7 @@ export const Footer: React.FC = () => {
                 </div>
             </div>
 
-            <div className="border-t border-white/5 pt-8 text-center md:text-left flex flex-col md:flex-row gap-4 justify-between items-center text-white/20 font-mono text-[10px] uppercase">
+            <div className="max-w-7xl mx-auto px-6 md:px-20 border-t border-white/5 pt-8 text-center md:text-left flex flex-col md:flex-row gap-4 justify-between items-center text-white/20 font-mono text-[10px] uppercase">
                 <p>&copy; {new Date().getFullYear()} Infinite Kingdom Guards Ltd. All Rights Reserved.</p>
                 <p className="font-bold tracking-widest text-ikg-gold/40">Securing The Future.</p>
             </div>

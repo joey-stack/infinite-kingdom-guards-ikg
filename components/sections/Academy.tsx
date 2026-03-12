@@ -46,7 +46,7 @@ export const Academy: React.FC = () => {
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-ikg-gold/5 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-6 md:px-20 w-full">
                 {/* Section Header */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-16 gap-6">
                     <div>

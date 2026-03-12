@@ -4,11 +4,11 @@ import { Button } from '../ui/Button';
 
 export const CTA: React.FC = () => {
     return (
-        <section id="deploy" className="bg-ikg-gold py-24 px-6 md:px-20 text-center relative overflow-hidden">
+        <section id="deploy" className="bg-ikg-gold py-24 text-center relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/80" />
 
-            <div className="relative z-10 max-w-4xl mx-auto">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-20 w-full">
                 <h2 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-8 drop-shadow-lg">
                     Secure Your Future
                 </h2>

@@ -58,8 +58,8 @@ export const CapabilitiesPage: React.FC = () => {
             </section>
 
             {/* Core Capabilities Grid */}
-            <section className="py-24 px-6 md:px-12 max-w-[1600px] mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 px-4 md:px-8 border-b border-white/10 pb-8">
+            <section className="py-24 relative">
+                <div className="max-w-7xl mx-auto md:px-20 w-full flex flex-col md:flex-row justify-between items-end mb-16 px-4 border-b border-white/10 pb-8">
                     <div>
                         <h2 className="text-ikg-gold font-mono text-sm tracking-widest uppercase mb-4 flex items-center gap-2">
                             <ShieldCheck className="w-4 h-4" />
@@ -75,7 +75,7 @@ export const CapabilitiesPage: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="max-w-7xl mx-auto px-6 md:px-20 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {servicesData.map((service, idx) => (
                         <Link to={`/services/${service.id}`} key={service.id} className="group block h-full">
                             <motion.div
@@ -198,9 +198,8 @@ export const CapabilitiesPage: React.FC = () => {
                 </div>
             </section>
 
-            {/* Mission Highlight / CTA */}
-            <section className="py-24 max-w-7xl mx-auto px-6 md:px-20">
-                <div className="bg-ikg-gold text-black p-12 md:p-20 relative overflow-hidden clip-path-button">
+            <section className="py-24 relative">
+                <div className="max-w-7xl mx-auto px-6 md:px-20 w-full bg-ikg-gold text-black p-12 md:p-20 relative overflow-hidden clip-path-button">
                     <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20"></div>
                     <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
                         <div className="md:w-2/3">

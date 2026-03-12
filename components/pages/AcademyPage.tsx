@@ -91,8 +91,8 @@ export const AcademyPage: React.FC = () => {
             </section>
 
             {/* Curriculum Grid */}
-            <section className="py-24 px-6 md:px-20 max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-white/10 pb-8">
+            <section className="py-24 relative">
+                <div className="max-w-7xl mx-auto px-6 md:px-20 w-full flex flex-col md:flex-row justify-between items-end mb-16 border-b border-white/10 pb-8">
                     <div>
                         <h2 className="text-ikg-gold font-mono text-sm tracking-widest uppercase mb-4 flex items-center gap-2">
                             <BookOpen className="w-4 h-4" />
@@ -107,7 +107,7 @@ export const AcademyPage: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="max-w-7xl mx-auto px-6 md:px-20 w-full grid grid-cols-1 md:grid-cols-2 gap-8">
                     {courses.map((course, idx) => (
                         <motion.div
                             key={idx}

@@ -12,9 +12,10 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <Section id="contact" className="bg-ikg-stealth text-ikg-anduril p-8 md:p-0 flex-col md:flex-row">
+    <Section id="contact" className="bg-ikg-stealth text-ikg-anduril">
+      <div className="max-w-7xl mx-auto px-6 md:px-20 w-full flex flex-col md:flex-row h-full">
         {/* Left Info Panel: Stealth Black */}
-        <div className="w-full md:w-5/12 bg-ikg-stealth text-ikg-anduril p-12 md:p-24 flex flex-col justify-between border-r border-white/5">
+        <div className="w-full md:w-5/12 bg-ikg-stealth text-ikg-anduril px-6 py-12 md:p-24 flex flex-col justify-between border-r border-white/5">
             <div>
                 <h2 className="font-sans font-bold text-4xl md:text-5xl mb-6 text-ikg-anduril">Initiate <br/> Dialogue.</h2>
                 <p className="font-mono text-xs text-ikg-anduril/60 leading-relaxed max-w-xs">
@@ -92,6 +93,7 @@ export const Contact: React.FC = () => {
                 </Button>
             </form>
         </div>
+      </div>
     </Section>
   );
 };

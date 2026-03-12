@@ -49,20 +49,7 @@ export const Hero: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-white/10 rounded-bl-lg" />
         <div className="absolute bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-ikg-gold/40 rounded-br-lg" />
 
-        {/* Status Text */}
-        <div className="absolute top-8 right-8 text-right hidden md:block">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 1 }}
-          >
-            <span className="text-white/30 font-mono text-[10px] tracking-widest block mb-1 flex items-center justify-end gap-2">
-              <span className="w-1.5 h-1.5 bg-ikg-gold rounded-full animate-pulse" />
-              SECURE CONNECTION
-            </span>
-            <span className="text-ikg-gold/60 font-mono text-[10px] tracking-[0.3em] block">PROTOCOL: 144.IKG.DEF</span>
-          </motion.div>
-        </div>
+
       </div>
 
       {/* Main Content Container */}

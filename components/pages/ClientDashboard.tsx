@@ -68,7 +68,7 @@ export const ClientDashboard: React.FC = () => {
             <div className="fixed inset-0 bg-scanlines opacity-[0.03] pointer-events-none z-[100]" />
             <div className="fixed inset-0 bg-gradient-to-b from-transparent via-ikg-gold/[0.02] to-transparent pointer-events-none z-[99] animate-scan" style={{ backgroundSize: '100% 20%' }} />
 
-            <div className="pt-28 pb-20 px-6 md:px-12 max-w-[1600px] mx-auto relative z-10">
+            <div className="pt-28 pb-20 px-6 md:px-20 max-w-7xl mx-auto relative z-10 w-full">
                 {/* Dashboard Header */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6 border-b border-white/5 pb-8">
                     <div>
