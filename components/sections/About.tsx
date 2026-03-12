@@ -79,8 +79,8 @@ export const About: React.FC = () => {
 
                     {/* Floating Info Box */}
                     <div className="absolute -bottom-6 -left-6 bg-ikg-gold p-6 text-black w-48 shadow-lg shadow-ikg-gold/20 clip-path-button">
-                        <div className="font-mono text-xs font-bold mb-1">REG: RC 12345678</div>
-                        <div className="text-[10px] uppercase tracking-widest opacity-80">Government Licensed</div>
+                        <div className="font-mono text-xs font-bold mb-1">Samuel Anavi Saliu</div>
+                        <div className="text-[10px] uppercase tracking-widest opacity-80">Managing Director</div>
                     </div>
                 </motion.div>
 
