@@ -8,7 +8,7 @@ export const About: React.FC = () => {
             {/* Background Grid */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center relative z-10">
+            <div className="mx-auto flex flex-col lg:flex-row gap-16 items-center relative z-10 w-full">
 
                 {/* Typography Side */}
                 <motion.div
@@ -16,7 +16,7 @@ export const About: React.FC = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    className="w-full md:w-1/2"
+                    className="w-full lg:w-1/2"
                 >
                     <div className="flex items-center gap-4 mb-8">
                         <div className="w-12 h-[1px] bg-ikg-gold" />
@@ -55,7 +55,7 @@ export const About: React.FC = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    className="w-full md:w-1/2 relative"
+                    className="w-full lg:w-1/2 relative"
                 >
                     <div className="relative aspect-[3/4] overflow-hidden clip-path-slant bg-black/50 border border-white/10">
                         {/* Image */}
