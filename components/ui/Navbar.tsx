@@ -167,7 +167,7 @@ export const Navbar: React.FC = () => {
                                     className="w-full py-4 bg-ikg-gold text-black text-center font-black uppercase text-sm tracking-[0.2em]"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
-                                    Initialize Deployment
+                                    Book Now
                                 </Link>
                                 <Link
                                     to="/login"
