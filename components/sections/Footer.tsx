@@ -10,9 +10,14 @@ export const Footer: React.FC = () => {
                 <div className="col-span-1 md:col-span-1">
                     <div className="flex items-center gap-2 mb-6">
                         <img
-                            src="/assets/images/infinite-kingdom-guards-logo.png"
+                            src="/assets/images/infinite-kingdom-guards-logo-mobile.png"
                             alt="Infinite Kingdom Guards Logo"
-                            className="h-12 md:h-16 w-auto"
+                            className="h-12 w-auto md:hidden"
+                        />
+                        <img
+                            src="/assets/images/infinite-kingdom-guards-logo-desktop.png"
+                            alt="Infinite Kingdom Guards Logo"
+                            className="hidden md:block h-16 w-auto"
                         />
                     </div>
                     <p className="text-white/40 mb-6 font-mono text-xs">
