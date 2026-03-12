@@ -42,16 +42,16 @@ export const Navbar: React.FC = () => {
                 }`}
         >
             <div className="max-w-7xl mx-auto px-6 md:px-20 flex justify-between items-center">
-                <Link to="/" className="flex items-center gap-2 group">
+                <Link to="/" className="flex items-center gap-2">
                     <img
                         src="/assets/images/infinite-kingdom-guards-logo-mobile.png"
                         alt="IKG Logo"
-                        className="h-10 w-auto md:hidden transition-transform group-hover:scale-110"
+                        className="h-10 w-auto md:hidden"
                     />
                     <img
                         src="/assets/images/infinite-kingdom-guards-logo-desktop.png"
                         alt="IKG Logo"
-                        className="hidden md:block h-10 lg:h-12 w-auto transition-transform group-hover:scale-110"
+                        className="hidden md:block h-10 lg:h-12 w-auto"
                     />
                 </Link>
 
