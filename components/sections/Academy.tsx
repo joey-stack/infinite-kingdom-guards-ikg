@@ -105,8 +105,10 @@ export const Academy: React.FC = () => {
                             <p className="text-white/60 mb-6 md:mb-8 max-w-sm font-mono text-[10px] md:text-sm leading-relaxed">JOIN THE RANKS OF THE WORLD'S MOST DISCIPLINED SECURITY FORCE. RECRUITMENT IS OPEN FOR BATCH 24.</p>
 
                             <Button as="link" to="/booking" className="mt-8 rounded-sm">
-                                Enroll Now
-                                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2 relative z-10" />
+                                <span className="flex items-center gap-2">
+                                    Enroll Now
+                                    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2 relative z-10" />
+                                </span>
                             </Button>
                         </div>
                     </motion.div>
