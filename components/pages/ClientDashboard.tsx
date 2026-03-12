@@ -9,6 +9,7 @@ import {
     ChevronRight, Zap
 } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
+import { Button } from '../ui/Button';
 
 interface Deployment {
     id: string;
@@ -96,15 +97,16 @@ export const ClientDashboard: React.FC = () => {
                             </span>
                             <div className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
                         </Link>
-                        <button
+                        <Button
                             onClick={handleLogout}
-                            className="px-8 py-4 border border-white/10 text-white/40 font-black uppercase text-xs tracking-widest hover:border-red-500/50 hover:text-red-500 transition-all duration-300"
+                            variant="outline"
+                            className="!px-8 !py-4 !text-xs text-white/40 hover:border-red-500/50 hover:text-red-500"
                         >
-                            <span className="flex items-center gap-2">
+                            <span className="flex items-center gap-2 relative z-10">
                                 <LogOut className="w-4 h-4" />
                                 Terminate Session
                             </span>
-                        </button>
+                        </Button>
                     </div>
                 </div>
 

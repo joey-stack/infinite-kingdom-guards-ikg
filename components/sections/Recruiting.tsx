@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Target, Award } from 'lucide-react';
+import { Button } from '../ui/Button';
 import recruitingImg from '@/assets/images/feature-guard.png';
 
 export const Recruiting: React.FC = () => {
@@ -66,12 +67,9 @@ export const Recruiting: React.FC = () => {
                         </div>
                     </div>
 
-                    <button className="group relative px-8 py-4 bg-transparent border border-ikg-gold text-ikg-gold font-mono uppercase tracking-widest overflow-hidden hover:text-black transition-colors duration-300">
-                        <div className="absolute inset-0 w-0 bg-ikg-gold transition-all duration-[250ms] ease-out group-hover:w-full opacity-100" />
-                        <div className="relative flex items-center gap-4 z-10">
-                            Apply Now <ArrowRight className="w-5 h-5" />
-                        </div>
-                    </button>
+                    <Button variant="outline" className="text-ikg-gold border-ikg-gold hover:text-black">
+                        Apply Now <ArrowRight className="w-5 h-5 relative z-10 ml-4" />
+                    </Button>
                 </motion.div>
             </div>
 

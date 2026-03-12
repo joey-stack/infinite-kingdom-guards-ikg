@@ -5,6 +5,7 @@ import { servicesData } from '../../data/services';
 import { motion } from 'framer-motion';
 import { CheckCircle, Server, Radio, Globe, Lock, Cpu, Eye, ShieldCheck, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Button } from '../ui/Button';
 
 // Assets
 import heroBg from '../../assets/images/feature-guard.png';
@@ -209,9 +210,14 @@ export const CapabilitiesPage: React.FC = () => {
                             </p>
                         </div>
                         <div className="md:w-1/3 flex justify-end">
-                            <button className="px-10 py-5 bg-black text-white font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-colors border-2 border-black">
+                            <Button
+                                as="link"
+                                to="/contact"
+                                variant="primary"
+                                className="px-10 py-5 bg-black text-white hover:bg-white hover:text-black border-2 border-black"
+                            >
                                 Initiate Contact
-                            </button>
+                            </Button>
                         </div>
                     </div>
                 </div>

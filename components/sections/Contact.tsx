@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Section } from '../ui/Section';
+import { Button } from '../ui/Button';
 
 export const Contact: React.FC = () => {
   const [status, setStatus] = useState<'IDLE' | 'SENT'>('IDLE');
@@ -75,19 +76,20 @@ export const Contact: React.FC = () => {
                     </div>
                 </div>
 
-                <button 
+                <Button 
                     type="submit" 
-                    className="group flex items-center gap-4 text-sm font-mono uppercase tracking-widest text-ikg-gold hover:text-ikg-anduril transition-colors"
+                    variant="ghost"
+                    className="w-[300px]"
                 >
                     {status === 'IDLE' ? (
-                        <>
+                        <div className="flex items-center gap-4 relative z-10">
                             <span>Transmit Request</span>
                             <span className="w-8 h-px bg-ikg-gold group-hover:w-16 transition-all duration-300"></span>
-                        </>
+                        </div>
                     ) : (
-                        <span>Transmission Sent</span>
+                        <span className="relative z-10">Transmission Sent</span>
                     )}
-                </button>
+                </Button>
             </form>
         </div>
     </Section>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Button } from '../ui/Button';
 
 export const CTA: React.FC = () => {
     return (
@@ -16,13 +17,13 @@ export const CTA: React.FC = () => {
                 </p>
 
                 <div className="flex flex-col md:flex-row justify-center gap-6">
-                    <button className="px-12 py-5 bg-white text-black font-bold uppercase tracking-widest hover:bg-ikg-stealth hover:text-white transition-colors duration-300">
+                    <Button as="link" to="/contact" variant="primary" className="w-[300px]">
                         Hire IKG Guards
-                    </button>
-                    <button className="px-12 py-5 border-2 border-white text-white font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors duration-300 flex items-center justify-center gap-2">
+                    </Button>
+                    <Button as="link" to="/academy" variant="outline" className="w-[300px]">
                         <span>Join The Academy</span>
-                        <ArrowRight size={20} />
-                    </button>
+                        <ArrowRight size={20} className="ml-2 transition-transform group-hover:translate-x-2 relative z-10" />
+                    </Button>
                 </div>
             </div>
         </section>

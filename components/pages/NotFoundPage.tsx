@@ -4,6 +4,7 @@ import { Footer } from '../sections/Footer';
 import { motion } from 'framer-motion';
 import { ShieldOff, Home, ArrowLeft } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Button } from '../ui/Button';
 
 export const NotFoundPage: React.FC = () => {
     const navigate = useNavigate();
@@ -79,20 +80,23 @@ export const NotFoundPage: React.FC = () => {
                         transition={{ delay: 0.5 }}
                         className="flex flex-col sm:flex-row items-center justify-center gap-4"
                     >
-                        <Link
+                        <Button
+                            as="link"
                             to="/"
-                            className="px-8 py-4 bg-ikg-gold text-black font-bold uppercase text-xs tracking-widest hover:bg-white transition-colors flex items-center gap-2"
+                            variant="primary"
+                            className="flex items-center gap-2 !px-8 !py-4 !text-xs"
                         >
-                            <Home className="w-4 h-4" />
-                            Return to Base
-                        </Link>
-                        <button
+                            <Home className="w-4 h-4 relative z-10" />
+                            <span className="relative z-10">Return to Base</span>
+                        </Button>
+                        <Button
                             onClick={() => navigate(-1)}
-                            className="px-8 py-4 border border-white/20 text-white/60 font-bold uppercase text-xs tracking-widest hover:border-ikg-gold hover:text-ikg-gold transition-colors flex items-center gap-2"
+                            variant="outline"
+                            className="flex items-center gap-2 !px-8 !py-4 !text-xs"
                         >
-                            <ArrowLeft className="w-4 h-4" />
-                            Go Back
-                        </button>
+                            <ArrowLeft className="w-4 h-4 relative z-10" />
+                            <span className="relative z-10">Go Back</span>
+                        </Button>
                     </motion.div>
 
                     {/* System Info */}

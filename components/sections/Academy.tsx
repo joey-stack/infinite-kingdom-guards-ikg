@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, BookOpen, Shield, ShieldCheck, Target, Activity, ChevronRight, Lock, ChevronDown, CheckCircle } from 'lucide-react';
 import { CURRICULUM } from '../../constants';
+import { Button } from '../ui/Button';
 import img from '@/assets/images/hero_bg_3.png';
 
 export const Academy: React.FC = () => {
@@ -103,11 +104,10 @@ export const Academy: React.FC = () => {
                             <h3 className="text-2xl md:text-4xl font-black text-white uppercase mb-3 tracking-tighter">Elite Status</h3>
                             <p className="text-white/60 mb-6 md:mb-8 max-w-sm font-mono text-[10px] md:text-sm leading-relaxed">JOIN THE RANKS OF THE WORLD'S MOST DISCIPLINED SECURITY FORCE. RECRUITMENT IS OPEN FOR BATCH 24.</p>
 
-                            <button className="group relative flex items-center gap-4 px-6 md:px-8 py-3 md:py-4 bg-white text-black font-black uppercase text-xs md:text-sm tracking-widest hover:bg-ikg-gold transition-all duration-300 rounded-sm">
-                                <span className="relative z-10">Enroll Now</span>
+                            <Button as="link" to="/booking" className="mt-8 rounded-sm">
+                                Enroll Now
                                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2 relative z-10" />
-                                <div className="absolute inset-0 bg-ikg-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
-                            </button>
+                            </Button>
                         </div>
                     </motion.div>
 

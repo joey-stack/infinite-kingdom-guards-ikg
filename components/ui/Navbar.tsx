@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence, stagger } from 'framer-motion';
 import { Menu, X, Shield, Instagram, Twitter, Linkedin, Phone, Mail, Globe } from 'lucide-react';
+import { Button } from './Button';
 
 export const Navbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -71,20 +72,26 @@ export const Navbar: React.FC = () => {
                             {link.name}
                         </Link>
                     ))}
-                    <Link
+                    <Button
+                        as="link"
                         to="/booking"
                         onMouseEnter={() => import('../pages/BookingPage').catch(() => { })}
-                        className="ml-2 px-5 py-2 bg-ikg-gold text-black font-bold uppercase text-[10px] tracking-widest hover:bg-white transition-all"
+                        variant="primary"
+                        size="sm"
+                        className="ml-2 !py-2 !px-5"
                     >
                         Book Now
-                    </Link>
-                    <Link
+                    </Button>
+                    <Button
+                        as="link"
                         to="/login"
                         onMouseEnter={() => import('../pages/LoginPage').catch(() => { })}
-                        className="px-5 py-2 border border-white/20 text-white/70 font-bold uppercase text-[10px] tracking-widest hover:border-ikg-gold hover:text-ikg-gold transition-all"
+                        variant="outline"
+                        size="sm"
+                        className="!py-2 !px-5"
                     >
                         Client Login
-                    </Link>
+                    </Button>
                 </nav>
 
                 {/* Mobile Menu Toggle */}
@@ -162,20 +169,23 @@ export const Navbar: React.FC = () => {
                                 transition={{ delay: 0.4 }}
                                 className="flex flex-col gap-4 mb-12"
                             >
-                                <Link
+                                <Button
+                                    as="link"
                                     to="/booking"
-                                    className="w-full py-4 bg-ikg-gold text-black text-center font-black uppercase text-sm tracking-[0.2em]"
+                                    className="w-full text-[10px]"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                     Book Now
-                                </Link>
-                                <Link
+                                </Button>
+                                <Button
+                                    as="link"
                                     to="/login"
-                                    className="w-full py-4 border border-white/10 text-white text-center font-bold uppercase text-sm tracking-[0.2em] hover:bg-white/5"
+                                    variant="outline"
+                                    className="w-full text-[10px]"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                     Client Portal
-                                </Link>
+                                </Button>
                             </motion.div>
 
                             {/* Footer Info */}

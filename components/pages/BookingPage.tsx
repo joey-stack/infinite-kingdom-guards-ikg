@@ -5,6 +5,7 @@ import { servicesData } from '../../data/services';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Shield, Calculator, User, CreditCard, CheckCircle, Clock, MapPin, AlertTriangle, X, Lock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { Button } from '../ui/Button';
 
 // ─── Mock Paystack Payment Modal ───────────────────────────────────
 const PaymentModal: React.FC<{
@@ -420,13 +421,14 @@ export const BookingPage: React.FC = () => {
                             </div>
 
                             <div className="space-y-4">
-                                <button
+                                <Button
                                     onClick={() => handlePayment()}
-                                    className="w-full py-4 bg-ikg-gold text-black font-bold uppercase tracking-widest hover:bg-white transition-colors flex items-center justify-center gap-2"
+                                    variant="primary"
+                                    className="w-full h-14 flex items-center justify-center gap-2"
                                 >
-                                    <CreditCard className="w-4 h-4" />
-                                    Authorize Payment
-                                </button>
+                                    <CreditCard className="w-4 h-4 relative z-10" />
+                                    <span className="relative z-10">Authorize Payment</span>
+                                </Button>
                                 <p className="text-[10px] text-center text-white/30 leading-relaxed">
                                     <AlertTriangle className="w-3 h-3 inline mr-1 text-ikg-gold" />
                                     By authorizing, you agree to the tactical engagement protocols. Funds are held in escrow until mission completion.

@@ -3,6 +3,7 @@ import { Navbar } from '../ui/Navbar';
 import { Footer } from '../sections/Footer';
 import { motion } from 'framer-motion';
 import { Shield, Mail, Phone, MapPin, Send, Clock, CheckCircle, Globe, Building2 } from 'lucide-react';
+import { Button } from '../ui/Button';
 
 import heroBg from '../../assets/images/hero_bg_3.png';
 
@@ -190,30 +191,33 @@ export const ContactPage: React.FC = () => {
                                 ></textarea>
                             </div>
 
-                            <button
+                            <Button
                                 type="submit"
                                 disabled={formStatus !== 'idle'}
-                                className="w-full md:w-auto px-10 py-4 bg-ikg-gold text-black font-bold uppercase tracking-widest hover:bg-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                                variant="primary"
+                                className="w-full md:w-auto flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                {formStatus === 'idle' && (
-                                    <>
-                                        <Send className="w-4 h-4" />
-                                        Transmit Briefing
-                                    </>
-                                )}
-                                {formStatus === 'sending' && (
-                                    <>
-                                        <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
-                                        Encrypting...
-                                    </>
-                                )}
-                                {formStatus === 'sent' && (
-                                    <>
-                                        <CheckCircle className="w-4 h-4" />
-                                        Transmission Received
-                                    </>
-                                )}
-                            </button>
+                                <div className="relative z-10 flex items-center gap-3 flex-row">
+                                    {formStatus === 'idle' && (
+                                        <>
+                                            <Send className="w-4 h-4" />
+                                            <span>Transmit Briefing</span>
+                                        </>
+                                    )}
+                                    {formStatus === 'sending' && (
+                                        <>
+                                            <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
+                                            <span>Encrypting...</span>
+                                        </>
+                                    )}
+                                    {formStatus === 'sent' && (
+                                        <>
+                                            <CheckCircle className="w-4 h-4" />
+                                            <span>Transmission Received</span>
+                                        </>
+                                    )}
+                                </div>
+                            </Button>
 
                             <p className="text-[10px] font-mono text-white/20 uppercase tracking-widest mt-4">
                                 All communications are AES-256 encrypted // Response within 24 hours

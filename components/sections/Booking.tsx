@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Section } from '../ui/Section';
+import { Button } from '../ui/Button';
 import { ShieldCheck, Calculator, FileText, CreditCard, ChevronDown } from 'lucide-react';
 
 export const Booking: React.FC = () => {
@@ -121,10 +122,10 @@ export const Booking: React.FC = () => {
                 </p>
             </div>
 
-            <button className="w-full py-4 bg-ikg-gold text-ikg-stealth font-sans font-bold uppercase tracking-widest hover:bg-white transition-colors flex items-center justify-center gap-2">
-                {isInvoiceMode ? <CreditCard className="w-5 h-5" /> : <ShieldCheck className="w-5 h-5" />}
-                {isInvoiceMode ? 'Pay Invoice' : 'Proceed to Payment'}
-            </button>
+            <Button variant="primary" className="w-full h-14 md:h-16 tracking-widest flex items-center justify-center gap-2">
+                {isInvoiceMode ? <CreditCard className="w-5 h-5 relative z-10" /> : <ShieldCheck className="w-5 h-5 relative z-10" />}
+                <span className="relative z-10 font-sans font-bold uppercase">{isInvoiceMode ? 'Pay Invoice' : 'Proceed to Payment'}</span>
+            </Button>
         </div>
       </div>
 
@@ -140,9 +141,9 @@ export const Booking: React.FC = () => {
              <p className="font-mono text-xs text-ikg-anduril/60 mb-6">
                  Login to view detailed billing history, active duty rosters, and incident reports.
              </p>
-             <button className="px-6 py-3 border border-ikg-anduril/20 text-ikg-anduril font-mono text-xs uppercase tracking-widest hover:border-ikg-gold hover:text-ikg-gold transition-colors w-full">
+             <Button as="link" to="/login" variant="outline" className="w-full tracking-widest">
                  Access Portal
-             </button>
+             </Button>
          </div>
       </div>
     </Section>

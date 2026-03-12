@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, ArrowRight, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Button } from '../ui/Button';
 import { servicesData } from '../../data/services';
 import React, { useRef, useEffect } from 'react';
 
@@ -68,20 +69,22 @@ export const Services: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <button
+          <Button
             onClick={() => scroll('left')}
-            className="p-3 bg-white/5 border border-white/10 text-white hover:text-ikg-gold hover:border-ikg-gold transition-all"
+            variant="outline"
+            className="!px-3 !py-3 !text-white hover:!text-ikg-gold"
             aria-label="Scroll Left"
           >
-            <ArrowLeft className="w-5 h-5" />
-          </button>
-          <button
+            <ArrowLeft className="w-5 h-5 relative z-10" />
+          </Button>
+          <Button
             onClick={() => scroll('right')}
-            className="p-3 bg-white/5 border border-white/10 text-white hover:text-ikg-gold hover:border-ikg-gold transition-all"
+            variant="outline"
+            className="!px-3 !py-3 !text-white hover:!text-ikg-gold"
             aria-label="Scroll Right"
           >
-            <ArrowRight className="w-5 h-5" />
-          </button>
+            <ArrowRight className="w-5 h-5 relative z-10" />
+          </Button>
         </div>
       </div>
 

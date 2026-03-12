@@ -5,6 +5,7 @@ import { ArrowLeft, CheckCircle, ShieldAlert } from 'lucide-react';
 import { servicesData } from '../../data/services';
 import { Navbar } from '../ui/Navbar';
 import { Footer } from '../sections/Footer';
+import { Button } from '../ui/Button';
 
 export const ServiceDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -90,12 +91,13 @@ export const ServiceDetail: React.FC = () => {
                                 <p className="text-white/60 mb-8">
                                     Our operations team has received your deployment request. A tactical coordinator will contact you shortly.
                                 </p>
-                                <button
+                                <Button
                                     onClick={() => setFormStatus('idle')}
-                                    className="px-8 py-3 bg-white/10 text-white hover:bg-white hover:text-black transition-colors uppercase tracking-widest font-bold text-sm"
+                                    variant="outline"
+                                    className="!px-8 !py-3 !text-sm"
                                 >
                                     Make Another Request
-                                </button>
+                                </Button>
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} className="space-y-6">
@@ -133,13 +135,14 @@ export const ServiceDetail: React.FC = () => {
                                     ></textarea>
                                 </div>
 
-                                <button
+                                <Button
                                     type="submit"
                                     disabled={formStatus === 'submitting'}
-                                    className="w-full py-4 bg-ikg-gold text-black font-black uppercase tracking-widest hover:bg-white transition-colors flex items-center justify-center gap-2 group mt-4"
+                                    variant="primary"
+                                    className="w-full mt-4"
                                 >
                                     {formStatus === 'submitting' ? 'Transmitting...' : 'Initialize Request'}
-                                </button>
+                                </Button>
                             </form>
                         )}
                     </motion.div>

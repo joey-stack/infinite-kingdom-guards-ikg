@@ -4,6 +4,7 @@ import { Footer } from '../sections/Footer';
 import { motion } from 'framer-motion';
 import { Shield, Lock, Mail, Eye, EyeOff, AlertTriangle } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
+import { Button } from '../ui/Button';
 
 export const LoginPage: React.FC = () => {
     const navigate = useNavigate();
@@ -140,23 +141,24 @@ export const LoginPage: React.FC = () => {
                                 </div>
                             </div>
 
-                            <button
+                            <Button
                                 type="submit"
                                 disabled={loading}
-                                className="w-full py-4 bg-ikg-gold text-black font-bold uppercase tracking-widest hover:bg-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                variant="primary"
+                                className="w-full h-14 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 font-bold"
                             >
                                 {loading ? (
                                     <>
-                                        <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
-                                        Authenticating...
+                                        <div className="relative z-10 w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
+                                        <span className="relative z-10">Authenticating...</span>
                                     </>
                                 ) : (
                                     <>
-                                        <Lock className="w-4 h-4" />
-                                        Authenticate
+                                        <Lock className="w-4 h-4 relative z-10" />
+                                        <span className="relative z-10">Authenticate</span>
                                     </>
                                 )}
-                            </button>
+                            </Button>
                         </form>
 
                         {/* Footer Links */}

@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import heroBg from '@/assets/images/hero_bg_3.png';
+import { Button } from '../ui/Button';
 
 export const Hero: React.FC = () => {
   const containerRef = useRef<HTMLElement>(null);
@@ -94,17 +95,13 @@ export const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 md:8">
-              <button className="relative group px-8 md:10 py-4 md:5 bg-ikg-gold text-black font-black uppercase text-sm md:base tracking-widest clip-path-button overflow-hidden transition-all duration-500 hover:shadow-[0_0_30px_rgba(197,162,109,0.3)]">
-                <span className="relative z-10">Book Now</span>
-                <div className="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-                {/* Shimmer Effect */}
-                <div className="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-25deg] group-hover:animate-shimmer" />
-              </button>
+              <Button variant="primary">
+                Book Now
+              </Button>
 
-              <button className="relative group px-8 md:10 py-4 md:5 border border-white/10 text-white font-black uppercase text-sm md:base tracking-widest clip-path-button overflow-hidden transition-all duration-500 hover:border-ikg-gold hover:text-ikg-gold">
-                <span>Explore</span>
-                <div className="absolute inset-0 bg-ikg-gold/5 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-              </button>
+              <Button variant="outline">
+                Explore
+              </Button>
             </div>
           </motion.div>
         </motion.div>

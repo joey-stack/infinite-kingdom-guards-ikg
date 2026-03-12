@@ -3,6 +3,7 @@ import { Navbar } from '../ui/Navbar';
 import { Footer } from '../sections/Footer';
 import { motion } from 'framer-motion';
 import { BookOpen, UserCheck, ShieldAlert, Award, FileText, Crosshair, Map } from 'lucide-react';
+import { Button } from '../ui/Button';
 
 // Assets
 import heroBg from '../../assets/images/hero-guard.png';
@@ -152,9 +153,9 @@ export const AcademyPage: React.FC = () => {
                                     </div>
                                 </div>
 
-                                <button className="w-full py-4 border border-white/20 text-white uppercase font-bold tracking-widest hover:bg-ikg-gold hover:text-black hover:border-ikg-gold transition-all group-hover:shadow-[0_0_20px_rgba(255,215,0,0.3)]">
+                                <Button variant="outline" className="w-full text-xs">
                                     Enroll Now
-                                </button>
+                                </Button>
                             </div>
                         </motion.div>
                     ))}
