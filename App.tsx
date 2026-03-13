@@ -25,6 +25,7 @@ const NotFoundPage = React.lazy(() => import('./components/pages/NotFoundPage').
 const ServiceDetail = React.lazy(() => import('./components/pages/ServiceDetail').then(m => ({ default: m.ServiceDetail })));
 
 import { ProtectedRoute } from './components/ui/ProtectedRoute';
+import { PromoPopup } from './components/ui/PromoPopup';
 
 // Loading Fallback
 const PageLoader = () => (
@@ -50,6 +51,7 @@ const Home: React.FC = () => (
 const App: React.FC = () => {
   return (
     <SmoothScroll>
+      <PromoPopup />
       <React.Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<Home />} />
