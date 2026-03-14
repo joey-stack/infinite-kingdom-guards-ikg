@@ -1,5 +1,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home1/wisdohkr/infinitekingdomguards.com
-    - /bin/cp dist/index.html $DEPLOYPATH
-    - /bin/cp -rf dist/assets $DEPLOYPATH/
+    - /bin/cp -rf dist/* $DEPLOYPATH
+    - /bin/cp dist/.htaccess $DEPLOYPATH
