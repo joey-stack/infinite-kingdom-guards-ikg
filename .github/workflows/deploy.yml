@@ -35,7 +35,11 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          # The local directory to upload from
           local-dir: ./dist/
+          # The remote directory to upload to. 
+          # Use './' if your FTP user's root is the website directory.
+          # Otherwise, specify the full path like '/public_html' or '/infinitekingdomguards.com'
           server-dir: ./
           protocol: ftp
           port: 21
