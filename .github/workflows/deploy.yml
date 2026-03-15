@@ -25,18 +25,14 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      - name: List Build Files
-        run: ls -R dist
-
-      - name: Deploy to Server via FTP
+      - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ./  # This is the most important change
+          server-dir: ./
           protocol: ftp
           port: 21
           log-level: verbose
-          timeout: 90000
