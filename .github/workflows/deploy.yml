@@ -3,13 +3,12 @@ name: Deploy to cPanel
 on:
   push:
     branches:
-      - master
-  workflow_dispatch:  # Allows manual triggering
+      - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -17,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       - name: Install Dependencies
@@ -30,14 +29,14 @@ jobs:
         run: ls -R dist
 
       - name: Deploy to Server via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: public_html/infinitekingdomguards.com/
+          server-dir: ./  # This is the most important change
           protocol: ftp
           port: 21
           log-level: verbose
-          timeout: 60000
+          timeout: 90000
