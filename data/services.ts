@@ -1,82 +1,134 @@
-import { Shield, Target, Radio, Crosshair, Users, Activity } from 'lucide-react';
+import { Shield, Target, Building2, Crosshair, Users, Activity, UserCheck, FileText, ShieldAlert, Home, BookOpen, MessageSquare } from 'lucide-react';
 
 export const servicesData = [
     {
-        id: 'combat-training',
-        title: "Combat Training",
-        icon: Crosshair,
-        desc: "Tactical maneuvers, weapons handling, and battlefield communication.",
-        longDesc: "We offer a wide range of training activities, including physical fitness, weapons handling, tactical maneuvers, hand-to-hand combat techniques, marksmanship, battlefield communication, and other relevant skills required for combat situations.",
-        features: [
-            "Weapons Handling",
-            "Tactical Maneuvers",
-            "Hand-to-Hand Combat",
-            "Battlefield Communication"
-        ]
-    },
-    {
-        id: 'guard-training',
-        title: "Security Guard Training",
-        icon: Users,
-        desc: "Ensuring guards effectively perform duties and protect premises.",
-        longDesc: "We carry out security guard training which helps to make sure that our security officers can effectively perform their duties, from protecting your premises to dealing with various emergency situations. It's also a good way to keep them from making mistakes that could harm our clients and in turn legally damage our business reputation.",
-        features: [
-            "Premises Protection",
-            "Emergency Response",
-            "Risk Mitigation",
-            "Professional Conduct"
-        ]
-    },
-    {
-        id: 'self-defense',
-        title: "Self-Defense",
-        icon: Activity,
-        desc: "Reasonable force to protect oneself and family from aggressors.",
-        longDesc: "We also give training for self-defense which is the use of reasonable force to protect oneself or members of the family from bodily harm from the attack of an aggressor, if you sense you're in danger.",
-        features: [
-            "Personal Protection",
-            "Family Security",
-            "Threat Awareness",
-            "Defensive Techniques"
-        ]
-    },
-    {
-        id: 'physical-security',
-        title: "Physical Security",
+        id: 'escort-services',
+        title: "Escort Services",
         icon: Shield,
-        desc: "Personnel protection from actions and events causing loss or damage.",
-        longDesc: "Mobile and Static - we take care of personnel protection from physical actions and events that could cause serious loss or damage to an individual.",
+        desc: "Secure transport and protection for high-value personnel and assets.",
+        longDesc: "Protocol-driven secure escort services ensuring safe transit for VVIPs, corporate executives, and sensitive materials across diverse environments.",
         features: [
-            "Mobile Security",
-            "Static Protection",
-            "Personnel Safety",
-            "Asset Security"
+            "Secure Transit",
+            "Route Planning",
+            "Asset Protection",
+            "VVIP Protocol"
         ]
     },
     {
-        id: 'patrols',
-        title: "Patrols",
-        icon: Target,
-        desc: "Well-trained guards monitoring and securing specific assigned areas.",
-        longDesc: "We have well trained guards who carry out patrols to monitor and secure the specific geographic area they have been assigned to.",
+        id: 'close-protection',
+        title: "Close Protection",
+        icon: UserCheck,
+        desc: "Elite personal security detail for individual protection.",
+        longDesc: "Dedicated personal protection officers (Bodyguards) trained in defensive tactics, threat assessment, and emergency evacuation to ensure individual safety at all times.",
         features: [
-            "Area Monitoring",
-            "Perimeter Checks",
-            "Rapid Response",
-            "Situational Vetting"
+            "Personal Detail",
+            "Threat Assessment",
+            "Crisis Management",
+            "Covert Protection"
         ]
     },
     {
-        id: 'surveillance',
-        title: "Surveillance",
-        icon: Radio,
-        desc: "Continuous observation to gather info for strategic security decisions.",
-        longDesc: "Our guards are trained to carryout continuous or prolonged observation of an individual, group, or organization to gather information that can aid informed and strategic security decisions.",
+        id: 'protocol',
+        title: "Protocol",
+        icon: FileText,
+        desc: "Diplomatic and corporate coordination for high-profile events.",
+        longDesc: "Comprehensive administrative and diplomatic support, managing high-profile arrivals, event coordination, and official liaison services with precision.",
         features: [
-            "Prolonged Observation",
-            "Information Gathering",
-            "Strategic Intelligence",
-            "Advanced Monitoring"
+            "Diplomatic Liaison",
+            "Event Management",
+            "Logistics Support",
+            "Official Escort"
+        ]
+    },
+    {
+        id: 'office-security',
+        title: "Office Security",
+        icon: Building2,
+        desc: "Integrated security solutions for corporate and commercial premises.",
+        longDesc: "Standardized and high-tech security for corporate environments, focusing on access control, asset protection, and personnel safety within office complexes.",
+        features: [
+            "Access Control",
+            "Perimeter Defense",
+            "Staff Safety",
+            "Loss Prevention"
+        ]
+    },
+    {
+        id: 'bouncers',
+        title: "Bouncers",
+        icon: Users,
+        desc: "Professional crowd management for clubs and private venues.",
+        longDesc: "Specialized physical security for nightlife, private events, and entertainment venues, focused on conflict resolution and entry management.",
+        features: [
+            "Entry Verification",
+            "Conflict Resolution",
+            "Crowd Monitoring",
+            "Incident Response"
+        ]
+    },
+    {
+        id: 'armed-protection',
+        title: "Armed Protection",
+        icon: Crosshair,
+        desc: "Tactical armed response for high-risk security requirements.",
+        longDesc: "Lethal and non-lethal armed response units available for high-threat scenarios, cash-in-transit, and high-value asset containment.",
+        features: [
+            "Tactical Response",
+            "Asset Containment",
+            "High-Threat Defense",
+            "Rapid Deployment"
+        ]
+    },
+    {
+        id: 'crowd-control',
+        title: "Crowd Control",
+        icon: ShieldAlert,
+        desc: "Strategic management of large-scale public or private events.",
+        longDesc: "Large-scale management for stadiums, concerts, and public gatherings, ensuring smooth flow and rapid response to civil disturbances.",
+        features: [
+            "Egress Management",
+            "Buffer Zones",
+            "Risk Mitigation",
+            "Public Safety"
+        ]
+    },
+    {
+        id: 'home-security',
+        title: "Home Security",
+        icon: Home,
+        desc: "Residential protection and surveillance for private estates.",
+        longDesc: "Comprehensive residential security including static guards, panic response systems, and perimeter monitoring for private homes and estates.",
+        features: [
+            "Estates Patrols",
+            "Panic Systems",
+            "Gate Security",
+            "24/7 Monitoring"
+        ]
+    },
+    {
+        id: 'security-trainings',
+        title: "Security Trainings",
+        icon: BookOpen,
+        desc: "Professional development and tactical conditioning for guards.",
+        longDesc: "Comprehensive training programs covering physical fitness, tactical maneuvers, and specialized security protocols for professional protectors.",
+        features: [
+            "Tactical Drills",
+            "Ethics & Conduct",
+            "First Aid/Safety",
+            "Weapon Proficiency"
+        ]
+    },
+    {
+        id: 'security-consultation',
+        title: "Security Consultation",
+        icon: MessageSquare,
+        desc: "Strategic risk assessment and defensive advisory services.",
+        longDesc: "Expert advisory services to identify vulnerabilities, develop security architectures, and optimize protective protocols for organizations and individuals.",
+        features: [
+            "Risk Analysis",
+            "Policy Development",
+            "Safety Audits",
+            "Strategic Planning"
         ]
     }
 ];

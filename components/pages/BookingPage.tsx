@@ -182,12 +182,16 @@ export const BookingPage: React.FC = () => {
     // Pricing Constants
     const BASE_RATE_PER_GUARD = 250;
     const SERVICE_MULTIPLIERS: Record<string, number> = {
-        'mobile-static-security': 1.0,
-        'executive-protection': 2.5,
-        'specialized-k9-units': 1.5,
-        'cyber-security': 1.8,
-        'maritime-security': 3.0,
-        'drone-surveillance': 2.0
+        'escort-services': 1.5,
+        'close-protection': 2.5,
+        'protocol': 1.2,
+        'office-security': 1.0,
+        'bouncers': 1.1,
+        'armed-protection': 3.0,
+        'crowd-control': 1.4,
+        'home-security': 1.3,
+        'security-trainings': 1.2,
+        'security-consultation': 1.5
     };
 
     const [totalCost, setTotalCost] = useState(0);
