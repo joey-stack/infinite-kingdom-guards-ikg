@@ -20,10 +20,6 @@ import {
 } from 'lucide-react';
 import { Button } from '../ui/Button';
 
-// Assets
-import heroBg from '@/public/assets/images/hero-guard.png';
-import professionalImg from '@/public/assets/images/Professional.png';
-
 // Map curriculum to icons for the grid - matching Academy.tsx logic
 const moduleIcons: Record<string, any> = {
     '1': ShieldCheck,
@@ -41,6 +37,9 @@ const moduleIcons: Record<string, any> = {
     '13': Target,
     '14': Award,
 };
+
+const heroBg = '/assets/images/hero-guard.png';
+const professionalImg = '/assets/images/Professional.png';
 
 const getLevel = (id: string) => {
     const idNum = parseInt(id);
@@ -72,7 +71,6 @@ export const AcademyPage: React.FC = () => {
                         className="w-full h-full object-cover object-top opacity-50 filter grayscale contrast-125"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-ikg-stealth/80 via-transparent to-ikg-stealth"></div>
-                    <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
                 </div>
 
                 <div className="relative z-10 text-center px-6">
@@ -136,7 +134,7 @@ export const AcademyPage: React.FC = () => {
                                 transition={{ duration: 0.5, delay: idx * 0.05 }}
                                 className="bg-white/[0.02] border border-white/10 p-8 hover:border-ikg-gold/50 transition-all group relative overflow-hidden flex flex-col h-full"
                             >
-                                <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10(idx % 3 === 0 ? 0 : idx % 3 === 1 ? 5 : 10) transition-opacity">
+                                <div className={`absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-${idx % 3 === 0 ? '10' : idx % 3 === 1 ? '5' : '20'} transition-opacity`}>
                                     <Icon className="w-32 h-32 text-white" />
                                 </div>
 
@@ -200,7 +198,7 @@ export const AcademyPage: React.FC = () => {
                                     <span>300+ Acre Tactical Facility</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <Crosshair className="w-4 h-4 text-ikg-gold" />
+                                    <Target className="w-4 h-4 text-ikg-gold" />
                                     <span>Live-Fire Shoothouses</span>
                                 </li>
                                 <li className="flex items-center gap-3">
@@ -280,7 +278,7 @@ export const AcademyPage: React.FC = () => {
                             className="bg-ikg-stealth border border-white/10 p-8 text-center hover:border-ikg-gold/30 transition-colors group"
                         >
                             <div className="w-32 h-32 mx-auto mb-6 relative flex items-center justify-center bg-white/5 rounded-full">
-                                <Crosshair className="w-16 h-16 text-white/20" />
+                                <Target className="w-16 h-16 text-white/20" />
                             </div>
                             <h4 className="text-xl font-bold uppercase text-white mb-1">Agent 47</h4>
                             <span className="text-ikg-gold font-mono text-xs uppercase tracking-widest mb-6 block">Stealth Ops</span>
@@ -296,3 +294,4 @@ export const AcademyPage: React.FC = () => {
         </div>
     );
 };
+export default AcademyPage;

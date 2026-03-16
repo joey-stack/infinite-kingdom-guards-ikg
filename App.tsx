@@ -14,7 +14,7 @@ import { SmoothScroll } from './components/ui/SmoothScroll';
 // Lazy load page components
 const AboutPage = React.lazy(() => import('./components/pages/AboutPage').then(m => ({ default: m.AboutPage })));
 const ServicesPage = React.lazy(() => import('./components/pages/ServicesPage').then(m => ({ default: m.ServicesPage })));
-const AcademyPage = React.lazy(() => import('./components/pages/AcademyPage').then(m => ({ default: m.AcademyPage })));
+const AcademyPage = React.lazy(() => import('./components/pages/AcademyPage'));
 const FieldReportsPage = React.lazy(() => import('./components/pages/FieldReportsPage').then(m => ({ default: m.FieldReportsPage })));
 const FieldReportDetail = React.lazy(() => import('./components/pages/FieldReportDetail').then(m => ({ default: m.FieldReportDetail })));
 const BookingPage = React.lazy(() => import('./components/pages/BookingPage').then(m => ({ default: m.BookingPage })));
