@@ -6,7 +6,7 @@ import recruitingImg from '@/public/assets/images/feature-guard.png';
 
 export const Recruiting: React.FC = () => {
     return (
-        <section id="academy" className="h-screen w-full flex flex-col md:flex-row bg-ikg-stealth overflow-hidden relative">
+        <section id="recruiting" className="h-screen w-full flex flex-col md:flex-row bg-ikg-stealth overflow-hidden relative">
             <div className="max-w-7xl mx-auto px-6 md:px-20 w-full flex flex-col md:flex-row h-full">
 
             {/* Image Side (Left on Desktop, Top on Mobile) */}

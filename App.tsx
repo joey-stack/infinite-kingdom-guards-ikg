@@ -8,6 +8,7 @@ import { Services } from './components/sections/Services';
 import { Industries } from './components/sections/Industries';
 import { Testimonials } from './components/sections/Testimonials';
 import { Academy } from './components/sections/Academy';
+import { Recruiting } from './components/sections/Recruiting';
 import { Footer } from './components/sections/Footer';
 import { SmoothScroll } from './components/ui/SmoothScroll';
 
@@ -43,6 +44,7 @@ const Home: React.FC = () => (
     <Services />
     <Industries />
     <Academy />
+    <Recruiting />
     <Testimonials />
     <Footer />
   </main>

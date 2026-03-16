@@ -90,7 +90,7 @@ export const News: React.FC = () => {
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </Section>
