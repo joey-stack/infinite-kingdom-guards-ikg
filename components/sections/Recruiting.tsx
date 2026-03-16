@@ -11,9 +11,6 @@ export const Recruiting: React.FC = () => {
 
             {/* Image Side (Left on Desktop, Top on Mobile) */}
             <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden group">
-                <div className="absolute inset-0 bg-ikg-gold/10 mix-blend-overlay z-10" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-20 md:bg-gradient-to-r" />
-
                 {/* The Image */}
                 <motion.img
                     initial={{ scale: 1.1 }}
@@ -22,11 +19,11 @@ export const Recruiting: React.FC = () => {
                     src={recruitingImg}
                     alt="Elite IKG Guards"
                     loading="lazy"
-                    className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+                    className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-700"
                 />
 
-                {/* Decorative Grid Overlay */}
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(197,160,89,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(197,160,89,0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none opacity-20" />
+                {/* Decorative Grid Overlay - Subtle tactical feel */}
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(197,160,89,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(197,160,89,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none opacity-20" />
             </div>
 
             {/* Content Side (Right on Desktop, Bottom on Mobile) */}
@@ -69,7 +66,10 @@ export const Recruiting: React.FC = () => {
                     </div>
 
                     <Button variant="outline" className="text-ikg-gold border-ikg-gold hover:text-black">
-                        Apply Now <ArrowRight className="w-5 h-5 relative z-10 ml-4" />
+                        <span className="flex items-center gap-4">
+                            Apply Now
+                            <ArrowRight className="w-5 h-5 relative z-10" />
+                        </span>
                     </Button>
                 </motion.div>
             </div>
