@@ -13,7 +13,7 @@ import { SmoothScroll } from './components/ui/SmoothScroll';
 
 // Lazy load page components
 const AboutPage = React.lazy(() => import('./components/pages/AboutPage').then(m => ({ default: m.AboutPage })));
-const CapabilitiesPage = React.lazy(() => import('./components/pages/CapabilitiesPage').then(m => ({ default: m.CapabilitiesPage })));
+const ServicesPage = React.lazy(() => import('./components/pages/ServicesPage').then(m => ({ default: m.ServicesPage })));
 const AcademyPage = React.lazy(() => import('./components/pages/AcademyPage').then(m => ({ default: m.AcademyPage })));
 const FieldReportsPage = React.lazy(() => import('./components/pages/FieldReportsPage').then(m => ({ default: m.FieldReportsPage })));
 const FieldReportDetail = React.lazy(() => import('./components/pages/FieldReportDetail').then(m => ({ default: m.FieldReportDetail })));
@@ -56,7 +56,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/capabilities" element={<CapabilitiesPage />} />
+          <Route path="/services" element={<ServicesPage />} />
           <Route path="/academy" element={<AcademyPage />} />
           <Route path="/field-reports" element={<FieldReportsPage />} />
           <Route path="/field-reports/:id" element={<FieldReportDetail />} />

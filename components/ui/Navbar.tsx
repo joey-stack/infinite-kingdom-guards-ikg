@@ -32,7 +32,7 @@ export const Navbar: React.FC = () => {
 
     const navLinks = [
         { name: 'About', href: '/about' },
-        { name: 'Capabilities', href: '/capabilities' },
+        { name: 'Services', href: '/services' },
         { name: 'Academy', href: '/academy' },
         { name: 'Field Reports', href: '/field-reports' },
         { name: 'Contact', href: '/contact' },

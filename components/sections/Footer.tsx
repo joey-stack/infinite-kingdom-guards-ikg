@@ -45,7 +45,7 @@ export const Footer: React.FC = () => {
                     <ul className="space-y-4 text-white/50 font-mono text-xs">
                         {[
                             { label: 'About Us', href: '/about' },
-                            { label: 'Capabilities', href: '/capabilities' },
+                            { label: 'Services', href: '/services' },
                             { label: 'Academy', href: '/academy' },
                             { label: 'Field Reports', href: '/field-reports' },
                             { label: 'Contact', href: '/contact' }

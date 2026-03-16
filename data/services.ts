@@ -2,81 +2,81 @@ import { Shield, Target, Radio, Crosshair, Users, Activity } from 'lucide-react'
 
 export const servicesData = [
     {
-        id: 'mobile-static-security',
-        title: "Mobile & Static Security",
-        icon: Shield,
-        desc: "Rapid response units for high-risk transit zones and fixed assets.",
-        longDesc: "Our Mobile & Static Security units provide comprehensive protection for both moving and fixed assets. Utilizing armored vehicles and highly trained personnel, we ensure the safety of high-value cargo and individuals in transit. For static locations, our perimeter defense systems and access control protocols create an impenetrable shield against unauthorized access.",
+        id: 'combat-training',
+        title: "Combat Training",
+        icon: Crosshair,
+        desc: "Tactical maneuvers, weapons handling, and battlefield communication.",
+        longDesc: "We offer a wide range of training activities, including physical fitness, weapons handling, tactical maneuvers, hand-to-hand combat techniques, marksmanship, battlefield communication, and other relevant skills required for combat situations.",
         features: [
-            "Armored Transport Escort",
-            "24/7 Static Guarding",
-            "Access Control Management",
-            "Crisis Response Protocols"
+            "Weapons Handling",
+            "Tactical Maneuvers",
+            "Hand-to-Hand Combat",
+            "Battlefield Communication"
         ]
     },
     {
-        id: 'patrol-operations',
-        title: "Patrol Operations",
-        icon: Target,
-        desc: "24/7 static and roving perimeter defense systems with real-time tracking.",
-        longDesc: "We maintain a constant presence with our Patrol Operations. Our roving units utilize GPS-tracked vehicles and body cams to ensure total accountability and real-time situational awareness. Whether it's a residential estate or a corporate complex, our patrols act as a powerful deterrent and a rapid response force.",
+        id: 'guard-training',
+        title: "Security Guard Training",
+        icon: Users,
+        desc: "Ensuring guards effectively perform duties and protect premises.",
+        longDesc: "We carry out security guard training which helps to make sure that our security officers can effectively perform their duties, from protecting your premises to dealing with various emergency situations. It's also a good way to keep them from making mistakes that could harm our clients and in turn legally damage our business reputation.",
         features: [
-            "GPS-Tracked Roving Units",
-            "Real-time Incident Reporting",
-            "Perimeter Integrity Checks",
-            "Coordination with Law Enforcement"
+            "Premises Protection",
+            "Emergency Response",
+            "Risk Mitigation",
+            "Professional Conduct"
+        ]
+    },
+    {
+        id: 'self-defense',
+        title: "Self-Defense",
+        icon: Activity,
+        desc: "Reasonable force to protect oneself and family from aggressors.",
+        longDesc: "We also give training for self-defense which is the use of reasonable force to protect oneself or members of the family from bodily harm from the attack of an aggressor, if you sense you're in danger.",
+        features: [
+            "Personal Protection",
+            "Family Security",
+            "Threat Awareness",
+            "Defensive Techniques"
+        ]
+    },
+    {
+        id: 'physical-security',
+        title: "Physical Security",
+        icon: Shield,
+        desc: "Personnel protection from actions and events causing loss or damage.",
+        longDesc: "Mobile and Static - we take care of personnel protection from physical actions and events that could cause serious loss or damage to an individual.",
+        features: [
+            "Mobile Security",
+            "Static Protection",
+            "Personnel Safety",
+            "Asset Security"
+        ]
+    },
+    {
+        id: 'patrols',
+        title: "Patrols",
+        icon: Target,
+        desc: "Well-trained guards monitoring and securing specific assigned areas.",
+        longDesc: "We have well trained guards who carry out patrols to monitor and secure the specific geographic area they have been assigned to.",
+        features: [
+            "Area Monitoring",
+            "Perimeter Checks",
+            "Rapid Response",
+            "Situational Vetting"
         ]
     },
     {
         id: 'surveillance',
         title: "Surveillance",
         icon: Radio,
-        desc: "Drone-assisted monitoring and advanced electronic countermeasures.",
-        longDesc: "Gain the upper hand with our advanced Surveillance capabilities. We deploy aerial drones for wide-area monitoring and thermal imaging cameras for night operations. Our electronic countermeasures team secures your communications and sweeps for bugs to protect sensitive information.",
+        desc: "Continuous observation to gather info for strategic security decisions.",
+        longDesc: "Our guards are trained to carryout continuous or prolonged observation of an individual, group, or organization to gather information that can aid informed and strategic security decisions.",
         features: [
-            "Aerial Drone Monitoring",
-            "Thermal & Night Vision",
-            "TSCM (Bug Sweeping)",
-            "CCTV Command Center Integration"
-        ]
-    },
-    {
-        id: 'combat-training',
-        title: "Combat Training",
-        icon: Crosshair,
-        desc: "Advanced tactical instruction for private sector defense personnel.",
-        longDesc: "Our Combat Training modules are derived from special forces methodologies. We offer advanced tactical instruction for private security teams, covering close quarters battle (CQB), defensive driving, and weapon handling. Elevate your team's capability to military standards.",
-        features: [
-            "Close Quarters Battle (CQB)",
-            "Defensive Driving Courses",
-            "Weapon Handling & Safety",
-            "Hostile Environment Awareness"
-        ]
-    },
-    {
-        id: 'guard-training',
-        title: "Guard Training",
-        icon: Users,
-        desc: "Rigorous vetting and physical conditioning programs for elite guards.",
-        longDesc: "Quality starts with training. Our Guard Training program is a rigorous selection and conditioning process designed to produce elite protectors. We focus on physical fitness, conflict de-escalation, and legal compliance, ensuring our guards are disciplined professionals.",
-        features: [
-            "Physical Conditioning",
-            "Conflict De-escalation",
-            "First Aid & CPR Certification",
-            "Professional Etiquette"
-        ]
-    },
-    {
-        id: 'self-defense',
-        title: "Self Defense",
-        icon: Activity,
-        desc: "Specialized civilian and corporate personal protection workshops.",
-        longDesc: "Empower yourself and your staff with our Self Defense workshops. Tailored for civilians and corporate teams, these sessions teach practical personal protection techniques, situational awareness, and threat avoidance. Confidence is the first line of defense.",
-        features: [
-            "Krav Maga Fundamentals",
-            "Situational Awareness",
-            "Anti-Kidnapping Drills",
-            "Corporate Safety Seminars"
+            "Prolonged Observation",
+            "Information Gathering",
+            "Strategic Intelligence",
+            "Advanced Monitoring"
         ]
     }
 ];

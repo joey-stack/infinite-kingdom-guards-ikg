@@ -10,7 +10,7 @@ import { Button } from '../ui/Button';
 // Assets
 import heroBg from '@/public/assets/images/feature-guard.png';
 
-export const CapabilitiesPage: React.FC = () => {
+export const ServicesPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-ikg-stealth font-sans text-white selection:bg-ikg-gold selection:text-black">
             <Navbar />
@@ -20,7 +20,7 @@ export const CapabilitiesPage: React.FC = () => {
                 <div className="absolute inset-0">
                     <img
                         src={heroBg}
-                        alt="Capabilities Background"
+                        alt="Services Background"
                         className="w-full h-full object-cover opacity-30 filter grayscale contrast-125 scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ikg-stealth via-ikg-stealth/60 to-transparent"></div>
@@ -34,7 +34,7 @@ export const CapabilitiesPage: React.FC = () => {
                         transition={{ duration: 0.8 }}
                         className="inline-block mb-4 px-4 py-1 border border-ikg-gold/30 rounded-full bg-ikg-gold/5 backdrop-blur-md"
                     >
-                        <span className="text-ikg-gold font-mono text-xs tracking-[0.2em] uppercase">Operational Superiority</span>
+                        <span className="text-ikg-gold font-mono text-xs tracking-[0.2em] uppercase">Operational Excellence</span>
                     </motion.div>
 
                     <motion.h1
@@ -43,7 +43,7 @@ export const CapabilitiesPage: React.FC = () => {
                         transition={{ duration: 0.8, delay: 0.1 }}
                         className="text-4xl sm:text-5xl md:text-8xl font-black uppercase tracking-tighter mb-6 leading-none"
                     >
-                        Full Spectrum <span className="text-transparent bg-clip-text bg-gradient-to-r from-ikg-gold via-yellow-200 to-ikg-gold">Dominance</span>
+                        Our Strategic <span className="text-transparent bg-clip-text bg-gradient-to-r from-ikg-gold via-yellow-200 to-ikg-gold">Services</span>
                     </motion.h1>
 
                     <motion.p
