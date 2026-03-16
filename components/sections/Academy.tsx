@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, BookOpen, Shield, ShieldCheck, Target, Activity, ChevronRight, Lock, ChevronDown, CheckCircle } from 'lucide-react';
+import { ArrowRight, BookOpen, Shield, ShieldCheck, Target, Activity, ChevronRight, Lock, ChevronDown, CheckCircle, FileText, ShieldAlert } from 'lucide-react';
 import { CURRICULUM } from '../../constants';
 import { Button } from '../ui/Button';
 import img from '@/public/assets/images/hero_bg_3.png';
@@ -8,21 +8,20 @@ import img from '@/public/assets/images/hero_bg_3.png';
 export const Academy: React.FC = () => {
     const [expandedModule, setExpandedModule] = useState<string | null>(null);
 
-    // Map curriculum to icons for the grid
+    // Map curriculum to icons for the grid - matching AcademyPage.tsx logic
     const moduleIcons: Record<string, any> = {
-        '1': Shield,
+        '1': ShieldCheck,
         '2': Lock,
         '3': Activity,
         '4': Target,
-        '5': ShieldCheck,
+        '5': ShieldAlert,
         '6': BookOpen,
+        '7': FileText,
     };
 
-    const displayModules = CURRICULUM.slice(0, 5).map((m, idx) => ({
+    const displayModules = CURRICULUM.slice(0, 7).map((m) => ({
         ...m,
         icon: moduleIcons[m.id] || Shield,
-        colSpan: idx < 2 ? "md:col-span-2" : "md:col-span-1",
-        bg: idx === 1 ? "bg-ikg-gold/10" : "bg-white/5"
     }));
 
     const containerVariants = {
@@ -119,7 +118,7 @@ export const Academy: React.FC = () => {
                             key={module.id}
                             layout
                             variants={itemVariants}
-                            className={`${module.colSpan} p-8 relative rounded-sm border border-white/5 ${module.bg} backdrop-blur-md hover:border-ikg-gold/30 transition-all duration-500 group cursor-pointer`}
+                            className={`md:col-span-1 p-8 relative rounded-sm border border-white/5 bg-white/5 backdrop-blur-md hover:border-ikg-gold/30 transition-all duration-500 group cursor-pointer`}
                             onClick={() => setExpandedModule(expandedModule === module.id ? null : module.id)}
                         >
                             <div className="flex flex-col h-full">
@@ -137,7 +136,7 @@ export const Academy: React.FC = () => {
 
                                 <div>
                                     <h4 className="text-xl font-black text-white uppercase mb-2 tracking-tight group-hover:text-ikg-gold transition-colors">{module.title}</h4>
-                                    <p className="text-white/40 text-xs font-mono mb-4 leading-relaxed">{module.description}</p>
+                                    <p className="text-white/40 text-xs font-mono mb-4 leading-relaxed line-clamp-2">{module.description}</p>
 
                                     <AnimatePresence>
                                         {expandedModule === module.id && (
@@ -166,12 +165,19 @@ export const Academy: React.FC = () => {
                     {/* Full Curriculum Link */}
                     <motion.div
                         variants={itemVariants}
-                        className="md:col-span-1 rounded-sm border border-white/10 bg-white/[0.02] flex flex-col items-center justify-center text-center p-8 gap-6 hover:bg-ikg-gold group transition-all duration-500 cursor-pointer overflow-hidden relative"
+                        className="md:col-span-1 rounded-sm border border-white/10 bg-white/[0.02] overflow-hidden relative"
                     >
-                        <div className="absolute inset-0 bg-ikg-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <BookOpen className="w-10 h-10 text-ikg-gold group-hover:text-black transition-colors relative z-10" />
-                        <h4 className="text-sm font-black text-white uppercase group-hover:text-black transition-colors relative z-10 leading-tight">View Full<br />Curriculum</h4>
-                        <div className="w-8 h-[2px] bg-white/10 group-hover:bg-black/20 transition-colors relative z-10" />
+                        <Button
+                            as="link"
+                            to="/academy"
+                            variant="ghost"
+                            className="w-full h-full flex flex-col items-center justify-center text-center p-8 gap-6 hover:bg-ikg-gold group transition-all duration-500 cursor-pointer border-0"
+                        >
+                            <div className="absolute inset-0 bg-ikg-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            <BookOpen className="w-10 h-10 text-ikg-gold group-hover:text-black transition-colors relative z-10" />
+                            <h4 className="text-sm font-black text-white group-hover:text-black uppercase transition-colors relative z-10 leading-tight">View Full<br />Curriculum</h4>
+                            <div className="w-8 h-[2px] bg-white/10 group-hover:bg-black/20 transition-colors relative z-10" />
+                        </Button>
                     </motion.div>
                 </motion.div>
             </div>
