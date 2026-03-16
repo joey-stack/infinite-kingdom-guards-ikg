@@ -10,30 +10,21 @@ import heroBg from '@/public/assets/images/hero_bg_3.png';
 const offices = [
     {
         city: 'Abuja',
-        type: 'Headquarters',
-        address: '123 Defense Avenue, Central Business District, Abuja',
-        phone: '+234 800 IKG GUARD',
-        email: 'ops@ikg.com',
+        type: 'Head Office',
+        address: '10 Dutse Street, War College, 3rd Avenue, Gwarinpa Estate, Abuja, Nigeria.',
+        phone: '+234-916-167-1276',
+        email: 'info@infinitekingdomguards.com',
         status: 'ACTIVE',
         icon: Building2
     },
     {
-        city: 'Lagos',
-        type: 'Regional Hub',
-        address: 'Victoria Island, Lagos',
-        phone: '+234 801 000 0000',
-        email: 'lagos@ikg.com',
+        city: 'Abuja Branch',
+        type: 'Operational Hub',
+        address: 'Suite SF 22, 2nd Floor, Crest Plaza, 1st Avenue, By Fidelity Bank PLC, Gwarinpa Estate, Abuja.',
+        phone: '+234-802-373-2564',
+        email: 'info@infinitekingdomguards.com',
         status: 'ACTIVE',
         icon: Globe
-    },
-    {
-        city: 'Demsa',
-        type: 'Training Command',
-        address: 'Classified Facility, Adamawa State',
-        phone: 'Encrypted Line',
-        email: 'academy@ikg.com',
-        status: 'ACTIVE',
-        icon: Shield
     }
 ];
 

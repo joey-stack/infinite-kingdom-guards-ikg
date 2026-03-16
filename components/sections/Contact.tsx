@@ -34,7 +34,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                     <span className="block font-mono text-[10px] text-ikg-gold uppercase tracking-widest mb-2">Contact</span>
-                    <p className="font-sans text-lg underline decoration-ikg-anduril/30 underline-offset-4 text-ikg-anduril">clearance@ikguards.com</p>
+                    <p className="font-sans text-lg underline decoration-ikg-anduril/30 underline-offset-4 text-ikg-anduril">info@infinitekingdomguards.com</p>
                 </div>
             </div>
         </div>

@@ -69,9 +69,9 @@ export const Footer: React.FC = () => {
                 <div>
                     <h4 className="text-white font-bold uppercase tracking-widest mb-6 text-xs">Headquarters</h4>
                     <address className="text-white/50 font-mono text-xs not-italic space-y-4">
-                        <p>123 Defense Avenue,<br />Central Business District,<br />Abuja, Nigeria.</p>
-                        <p><a href="tel:+2348000000000" className="hover:text-white">+234 800 IKG GUARD</a></p>
-                        <p><a href="mailto:ops@ikg.com" className="hover:text-white">ops@ikg.com</a></p>
+                        <p>10 Dutse Street, War College,<br />3rd Avenue, Gwarinpa Estate,<br />Abuja, FCT - Nigeria.</p>
+                        <p><a href="tel:+2349161671276" className="hover:text-white">+234-916-167-1276</a></p>
+                        <p><a href="mailto:info@infinitekingdomguards.com" className="hover:text-white">info@infinitekingdomguards.com</a></p>
                     </address>
                 </div>
             </div>
