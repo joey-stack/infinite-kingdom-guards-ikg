@@ -2,47 +2,61 @@ import React from 'react';
 import { Navbar } from '../ui/Navbar';
 import { Footer } from '../sections/Footer';
 import { motion } from 'framer-motion';
-import { BookOpen, UserCheck, ShieldAlert, Award, FileText, Crosshair, Map } from 'lucide-react';
+import { CURRICULUM } from '../../constants';
+import { 
+    BookOpen, 
+    UserCheck, 
+    ShieldAlert, 
+    Award, 
+    FileText, 
+    Target, 
+    Map, 
+    ShieldCheck, 
+    Lock, 
+    Activity, 
+    Users,
+    ChevronDown,
+    CheckCircle
+} from 'lucide-react';
 import { Button } from '../ui/Button';
 
 // Assets
 import heroBg from '@/public/assets/images/hero-guard.png';
 import professionalImg from '@/public/assets/images/Professional.png';
 
-const courses = [
-    {
-        title: 'Tactical Combat Casualty Care (TCCC)',
-        level: 'Advanced',
-        duration: '5 Days',
-        description: 'Comprehensive medical training for high-threat environments. Covers hemorrhage control, airway management, and shock treatment under fire.',
-        icon: ShieldAlert,
-        modules: ['Hemorrhage Control', 'Airway Management', 'Shock Treatment', 'Evacuation Protocols']
-    },
-    {
-        title: 'Close Protection Operative',
-        level: 'Expert',
-        duration: '14 Days',
-        description: 'The gold standard for executive protection. Includes route planning, threat assessment, embus/debus drills, and defensive driving.',
-        icon: UserCheck,
-        modules: ['Threat Assessment', 'Route Planning', 'Defensive Driving', 'Close Quarter Battle']
-    },
-    {
-        title: 'Surveillance & Counter-Surveillance',
-        level: 'Intermediate',
-        duration: '7 Days',
-        description: 'Master the art of observation. Effectively track targets while remaining undetected, and identify hostile surveillance teams.',
-        icon: Crosshair,
-        modules: ['Static Observation', 'Mobile Surveillance', 'Technical Surveillance', 'Counter-Measures']
-    },
-    {
-        title: 'Cybersecurity Awareness for Field Ops',
-        level: 'Basic',
-        duration: '3 Days',
-        description: 'Essential digital hygiene and operational security (OPSEC) for field agents. Securing comms, devices, and digital footprints.',
-        icon: FileText,
-        modules: ['Digital Footprint', 'Secure Comms', 'Device Hardening', 'Social Engineering']
-    }
-];
+// Map curriculum to icons for the grid - matching Academy.tsx logic
+const moduleIcons: Record<string, any> = {
+    '1': ShieldCheck,
+    '2': Lock,
+    '3': Activity,
+    '4': Target,
+    '5': ShieldAlert,
+    '6': BookOpen,
+    '7': FileText,
+    '8': ShieldAlert,
+    '9': Users,
+    '10': UserCheck,
+    '11': Map,
+    '12': ShieldAlert,
+    '13': Target,
+    '14': Award,
+};
+
+const getLevel = (id: string) => {
+    const idNum = parseInt(id);
+    if (idNum <= 4) return 'Basic';
+    if (idNum <= 10) return 'Intermediate';
+    if (idNum <= 13) return 'Advanced';
+    return 'Final';
+};
+
+const getDuration = (id: string) => {
+    const idNum = parseInt(id);
+    if (idNum <= 6) return '3 Days';
+    if (idNum <= 10) return '5 Days';
+    if (idNum <= 13) return '10 Days';
+    return 'Certification';
+};
 
 export const AcademyPage: React.FC = () => {
     return (
@@ -107,58 +121,66 @@ export const AcademyPage: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="max-w-7xl mx-auto px-6 md:px-20 w-full grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {courses.map((course, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: idx * 0.1 }}
-                            className="bg-white/[0.02] border border-white/10 p-8 hover:border-ikg-gold/50 transition-all group relative overflow-hidden"
-                        >
-                            <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity">
-                                <course.icon className="w-48 h-48 text-white" />
-                            </div>
+                <div className="max-w-7xl mx-auto px-6 md:px-20 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {CURRICULUM.map((course, idx) => {
+                        const Icon = moduleIcons[course.id] || BookOpen;
+                        const level = getLevel(course.id);
+                        const duration = getDuration(course.id);
+                        
+                        return (
+                            <motion.div
+                                key={course.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: idx * 0.05 }}
+                                className="bg-white/[0.02] border border-white/10 p-8 hover:border-ikg-gold/50 transition-all group relative overflow-hidden flex flex-col h-full"
+                            >
+                                <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10(idx % 3 === 0 ? 0 : idx % 3 === 1 ? 5 : 10) transition-opacity">
+                                    <Icon className="w-32 h-32 text-white" />
+                                </div>
 
-                            <div className="relative z-10">
-                                <div className="flex justify-between items-start mb-8">
-                                    <div className="p-4 bg-ikg-gold/10 rounded border border-ikg-gold/20 group-hover:bg-ikg-gold/20 transition-colors">
-                                        <course.icon className="w-8 h-8 text-ikg-gold" />
-                                    </div>
-                                    <div className="flex flex-col items-end">
-                                        <span className={`px-3 py-1 text-xs font-bold uppercase tracking-widest border mb-2 ${course.level === 'Expert' ? 'border-red-500 text-red-500' :
-                                            course.level === 'Advanced' ? 'border-orange-500 text-orange-500' :
+                                <div className="relative z-10 flex flex-col h-full">
+                                    <div className="flex justify-between items-start mb-8">
+                                        <div className="p-4 bg-ikg-gold/10 rounded border border-ikg-gold/20 group-hover:bg-ikg-gold/20 transition-colors">
+                                            <Icon className="w-8 h-8 text-ikg-gold" />
+                                        </div>
+                                        <div className="flex flex-col items-end">
+                                            <span className={`px-3 py-1 text-[10px] font-bold uppercase tracking-widest border mb-2 ${
+                                                level === 'Final' ? 'border-ikg-gold text-ikg-gold' :
+                                                level === 'Advanced' ? 'border-red-500 text-red-500' :
+                                                level === 'Intermediate' ? 'border-orange-500 text-orange-500' :
                                                 'border-green-500 text-green-500'
                                             }`}>
-                                            {course.level}
-                                        </span>
-                                        <span className="text-xs font-mono text-white/40">{course.duration}</span>
-                                    </div>
-                                </div>
-
-                                <h4 className="text-2xl font-bold uppercase mb-4 text-white group-hover:text-ikg-gold transition-colors">{course.title}</h4>
-                                <p className="text-white/60 leading-relaxed mb-8 min-h-[5rem] h-auto">
-                                    {course.description}
-                                </p>
-
-                                <div className="mb-8">
-                                    <span className="text-xs font-mono text-white/30 uppercase tracking-widest block mb-3">Key Modules:</span>
-                                    <div className="flex flex-wrap gap-2">
-                                        {course.modules.map((mod, mIdx) => (
-                                            <span key={mIdx} className="px-2 py-1 bg-white/5 text-xs text-white/60 rounded border border-white/5">
-                                                {mod}
+                                                {level}
                                             </span>
-                                        ))}
+                                            <span className="text-[10px] font-mono text-white/40">{duration}</span>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <Button variant="outline" className="w-full text-xs">
-                                    Enroll Now
-                                </Button>
-                            </div>
-                        </motion.div>
-                    ))}
+                                    <h4 className="text-xl font-bold uppercase mb-4 text-white group-hover:text-ikg-gold transition-colors leading-tight">{course.title}</h4>
+                                    <p className="text-white/60 leading-relaxed mb-8 text-sm flex-grow">
+                                        {course.description}
+                                    </p>
+
+                                    <div className="mb-8 overflow-hidden">
+                                        <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest block mb-3">Module Content:</span>
+                                        <div className="flex flex-wrap gap-2">
+                                            {course.topics.map((topic, tIdx) => (
+                                                <span key={tIdx} className="px-2 py-1 bg-white/5 text-[9px] text-white/60 rounded border border-white/5 uppercase font-mono">
+                                                    {topic}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <Button variant="outline" className="w-full text-[10px] tracking-widest uppercase">
+                                        Enroll Now
+                                    </Button>
+                                </div>
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </section>
 

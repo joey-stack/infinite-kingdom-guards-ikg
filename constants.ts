@@ -46,20 +46,90 @@ export const SERVICES: ServiceItem[] = [
 ];
 
 export const CURRICULUM: CurriculumModule[] = [
-  { id: '1', title: 'Introduction to Security', description: 'Overview, roles, and ethics within the security landscape.', topics: ['Overview', 'Roles & Responsibilities', 'Types of Security', 'Ethics'] },
-  { id: '2', title: 'Legal & Regulatory', description: 'Understanding rights, limitations, and use-of-force laws.', topics: ['Laws in Nigeria', 'Rights & Limitations', 'Use-of-Force', 'Human Rights'] },
-  { id: '3', title: 'Communication Skills', description: 'Mastering verbal and non-verbal protocols for effective operation.', topics: ['Verbal/Non-Verbal', 'Customer Service', 'Conflict Resolution', 'Radio Protocols'] },
-  { id: '4', title: 'Patrol & Surveillance', description: 'Techniques for observation, access control, and monitoring.', topics: ['Situational Awareness', 'Access Control', 'Vehicle Screening', 'CCTV Basics'] },
-  { id: '5', title: 'Emergency Response', description: 'Protocols for fire, medical, and crisis situations.', topics: ['Fire Safety', 'Evacuation', 'First Aid / CPR', 'Incident Protocol'] },
-  { id: '6', title: 'Equipment & Tech', description: 'Operational mastery of radios, CCTV, and defensive tools.', topics: ['Radio Ops', 'CCTV Monitoring', 'Access Systems', 'Non-Lethal Tools'] },
-  { id: '7', title: 'Incident Reporting', description: 'Accurate documentation and chain of custody procedures.', topics: ['Activity Logs', 'Evidence Handling', 'Chain of Custody'] },
-  { id: '8', title: 'Threat Assessment', description: 'Identifying and neutralizing potential risks before materialization.', topics: ['Suspicious Behavior', 'Preventive Measures', 'Risk Assessment'] },
-  { id: '9', title: 'Conflict & Crowd', description: 'De-escalation techniques for aggressive individuals and crowds.', topics: ['Aggressive Persons', 'Crowd Management', 'De-Escalation'] },
-  { id: '10', title: 'Professional Conduct', description: 'Discipline, grooming, and psychological resilience training.', topics: ['Grooming', 'Discipline', 'Mental Preparedness', 'Stress Mgmt'] },
-  { id: '11', title: 'Site-Specific Ops', description: 'Tailored procedures for residential, corporate, and retail environments.', topics: ['Residential', 'Corporate', 'Retail', 'Hospitality/Banking'] },
-  { id: '12', title: 'Specialized Modules', description: 'Advanced training for VIPs, transit, and counter-terrorism.', topics: ['VIP Protection', 'Cash-in-Transit', 'Anti-Terrorism', 'Disaster Response'] },
-  { id: '13', title: 'Practical Drills', description: 'Real-world simulation of emergency and patrol scenarios.', topics: ['Patrol Scenarios', 'Fire Drills', 'First-Aid Sims', 'Real-Time Incidents'] },
-  { id: '14', title: 'Certification', description: 'Final theoretical and practical evaluations for qualification.', topics: ['Written Assessment', 'Practical Eval', 'Performance Review'] },
+  { 
+    id: '1', 
+    title: 'Introduction to Security', 
+    description: 'Overview of the industry, roles, responsibilities, and professional ethics.', 
+    topics: ['Industry Overview', 'Roles & Responsibilities', 'Types of Security', 'Code of Conduct'] 
+  },
+  { 
+    id: '2', 
+    title: 'Legal & Regulatory Framework', 
+    description: 'Laws governing private security in Nigeria, use-of-force, and compliance.', 
+    topics: ['Nigerian Security Laws', 'Rights & Limitations', 'Use-of-Force Principles', 'Human Rights'] 
+  },
+  { 
+    id: '3', 
+    title: 'Communication Skills', 
+    description: 'Verbal and non-verbal communication, conflict resolution, and radio protocols.', 
+    topics: ['Customer Service', 'Conflict Resolution', 'De-Escalation', 'Radio Protocols'] 
+  },
+  { 
+    id: '4', 
+    title: 'Patrol & Surveillance Ops', 
+    description: 'Observation techniques, access control procedures, and surveillance equipment.', 
+    topics: ['Situational Awareness', 'Patrol Techniques', 'Access Control', 'Vehicle Screening'] 
+  },
+  { 
+    id: '5', 
+    title: 'Emergency Response & Safety', 
+    description: 'Fire safety, evacuation procedures, first aid, and incident protocols.', 
+    topics: ['Fire Safety', 'First Aid Basics', 'CPR / BLS', 'Incident Response'] 
+  },
+  { 
+    id: '6', 
+    title: 'Security Equipment & Tech', 
+    description: 'Mastery of radios, CCTV monitoring, alarm systems, and non-lethal tools.', 
+    topics: ['Radio Operation', 'CCTV Monitoring', 'Alarm Systems', 'Access Systems'] 
+  },
+  { 
+    id: '7', 
+    title: 'Incident Reporting', 
+    description: 'Daily activity logs, evidence handling, and record-keeping standards.', 
+    topics: ['Daily Logs', 'Incident Reports', 'Evidence Handling', 'Chain of Custody'] 
+  },
+  { 
+    id: '8', 
+    title: 'Threat Assessment', 
+    description: 'Identifying suspicious behavior and preventive security measures.', 
+    topics: ['Suspicious Behavior', 'Threat Recognition', 'Preventive Measures', 'Risk Assessment'] 
+  },
+  { 
+    id: '9', 
+    title: 'Conflict & Crowd Control', 
+    description: 'Managing crowd movement and de-escalation under pressure.', 
+    topics: ['Aggressive Persons', 'Crowd Management', 'De-Escalation', 'Judgment Scenarios'] 
+  },
+  { 
+    id: '10', 
+    title: 'Professional Conduct', 
+    description: 'Grooming, discipline, mental preparedness, and stress management.', 
+    topics: ['Appearance', 'Punctuality', 'Mental Readiness', 'Stress Mgmt'] 
+  },
+  { 
+    id: '11', 
+    title: 'Site-Specific Operations', 
+    description: 'Procedures for residential, corporate, retail, and hospital security.', 
+    topics: ['Residential Estates', 'Corporate Offices', 'Retail Security', 'Bank Protocols'] 
+  },
+  { 
+    id: '12', 
+    title: 'Advanced Specialized Modules', 
+    description: 'VIP protection, cash-in-transit, and anti-terrorism awareness.', 
+    topics: ['VIP Protection', 'Cash-in-Transit', 'Anti-Terrorism', 'Disaster Response'] 
+  },
+  { 
+    id: '13', 
+    title: 'Practical Drills & Sims', 
+    description: 'Real-time incident simulation, patrol drills, and evacuation exercises.', 
+    topics: ['Patrol Drills', 'Access Scenarios', 'Fire/Evac Drills', 'Incident Sims'] 
+  },
+  { 
+    id: '14', 
+    title: 'Assessment & Certification', 
+    description: 'Written and practical evaluations required for performance certification.', 
+    topics: ['Written Exams', 'Practical Evals', 'Performance Review', 'Certification'] 
+  },
 ];
 
 export const OPS_LOGS: OperationalLogItem[] = [
