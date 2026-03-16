@@ -1,6 +1,8 @@
 import React from 'react';
 import { Shield, Twitter, Linkedin, Facebook, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logoDesktop from '@/public/assets/images/infinite-kingdom-guards-logo-desktop.png';
+import logoMobile from '@/public/assets/images/infinite-kingdom-guards-logo-mobile.png';
 
 export const Footer: React.FC = () => {
     return (
@@ -10,13 +12,17 @@ export const Footer: React.FC = () => {
                 <div className="col-span-1 md:col-span-1">
                     <div className="flex items-center gap-2 mb-6">
                         <img
-                            src="/assets/images/infinite-kingdom-guards-logo-mobile.png"
+                            src={logoMobile}
                             alt="Infinite Kingdom Guards Logo"
+                            width="200"
+                            height="48"
                             className="h-12 w-auto md:hidden"
                         />
                         <img
-                            src="/assets/images/infinite-kingdom-guards-logo-desktop.png"
+                            src={logoDesktop}
                             alt="Infinite Kingdom Guards Logo"
+                            width="260"
+                            height="64"
                             className="hidden md:block h-16 w-auto"
                         />
                     </div>

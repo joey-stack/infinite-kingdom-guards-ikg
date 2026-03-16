@@ -6,8 +6,8 @@ import { BookOpen, UserCheck, ShieldAlert, Award, FileText, Crosshair, Map } fro
 import { Button } from '../ui/Button';
 
 // Assets
-import heroBg from '../../assets/images/hero-guard.png';
-import professionalImg from '../../assets/images/Professional.png';
+import heroBg from '@/public/assets/images/hero-guard.png';
+import professionalImg from '@/public/assets/images/Professional.png';
 
 const courses = [
     {

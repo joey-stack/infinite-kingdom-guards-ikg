@@ -5,10 +5,10 @@ import { Shield, Target, Award, Users, History, Globe, CheckCircle } from 'lucid
 import { motion } from 'framer-motion';
 
 // Assets
-import heroBg from '../../assets/images/hero_bg_3.png';
-import missionVisionImage from '../../assets/images/about-mission-vision-v2.png';
-import founderImage from '../../assets/images/wisdom-kwati-ceo.png';
-import mdImage from '../../assets/images/saliu-samuel-anavi-md.png';
+import heroBg from '@/public/assets/images/hero_bg_3.png';
+import missionVisionImage from '@/public/assets/images/about-mission-vision-v2.png';
+import founderImage from '@/public/assets/images/wisdom-kwati-ceo.png';
+import mdImage from '@/public/assets/images/saliu-samuel-anavi-md.png';
 
 const milestones = [
     { year: '2005', title: 'Foundation', description: 'Established by Commander Al-Falasi to provide elite protection services.' },

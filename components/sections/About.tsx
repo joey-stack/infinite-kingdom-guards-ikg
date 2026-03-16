@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import professionalImg from '@/assets/images/Professional_Portrait.jpg';
+import professionalImg from '@/public/assets/images/Professional_Portrait.jpg';
 
 export const About: React.FC = () => {
     return (

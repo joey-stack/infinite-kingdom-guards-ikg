@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Shield, Mail, Phone, MapPin, Send, Clock, CheckCircle, Globe, Building2 } from 'lucide-react';
 import { Button } from '../ui/Button';
 
-import heroBg from '../../assets/images/hero_bg_3.png';
+import heroBg from '@/public/assets/images/hero_bg_3.png';
 
 const offices = [
     {

@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 // Assets
-import heroBg from '../../assets/images/hero_bg_3.png';
+import heroBg from '@/public/assets/images/hero_bg_3.png';
 
 const ICONS = {
     'TRAINING': <BookOpen className="w-4 h-4" />,

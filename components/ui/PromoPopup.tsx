@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Calendar } from 'lucide-react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
+import heroGuard from '@/public/assets/images/hero-guard.png';
 
 export const PromoPopup: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -45,7 +46,7 @@ export const PromoPopup: React.FC = () => {
             {/* Left Column - Image */}
             <div className="w-full md:w-1/2 h-64 md:h-auto relative bg-ikg-stealth">
               <img 
-                src="/assets/images/hero-guard.png" 
+                src={heroGuard} 
                 alt="Security Training" 
                 className="w-full h-full object-cover"
               />

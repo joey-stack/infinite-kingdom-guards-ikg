@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence, stagger } from 'framer-motion';
 import { Menu, X, Shield, Instagram, Twitter, Linkedin, Phone, Mail, Globe } from 'lucide-react';
 import { Button } from './Button';
+import logoDesktop from '@/public/assets/images/infinite-kingdom-guards-logo-desktop.png';
+import logoMobile from '@/public/assets/images/infinite-kingdom-guards-logo-mobile.png';
 
 export const Navbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -44,13 +46,17 @@ export const Navbar: React.FC = () => {
             <div className="max-w-7xl mx-auto px-6 md:px-20 flex justify-between items-center">
                 <Link to="/" className="flex items-center gap-2">
                     <img
-                        src="/assets/images/infinite-kingdom-guards-logo-mobile.png"
+                        src={logoMobile}
                         alt="IKG Logo"
+                        width="160"
+                        height="40"
                         className="h-10 w-auto md:hidden"
                     />
                     <img
-                        src="/assets/images/infinite-kingdom-guards-logo-desktop.png"
+                        src={logoDesktop}
                         alt="IKG Logo"
+                        width="200"
+                        height="48"
                         className="hidden md:block h-10 lg:h-12 w-auto"
                     />
                 </Link>

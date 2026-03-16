@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Target, Award } from 'lucide-react';
 import { Button } from '../ui/Button';
-import recruitingImg from '@/assets/images/feature-guard.png';
+import recruitingImg from '@/public/assets/images/feature-guard.png';
 
 export const Recruiting: React.FC = () => {
     return (
