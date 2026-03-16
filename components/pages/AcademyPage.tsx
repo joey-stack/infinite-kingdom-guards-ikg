@@ -172,7 +172,7 @@ export const AcademyPage: React.FC = () => {
                                         </div>
                                     </div>
 
-                                    <Button as="link" to="/booking" className="w-full text-[10px] tracking-widest uppercase">
+                                    <Button as="link" to={`/booking?type=academy&module=${course.id}`} className="w-full text-[10px] tracking-widest uppercase">
                                         Enroll Now
                                     </Button>
                                 </div>

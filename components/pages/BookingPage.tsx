@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Shield, Calculator, User, CreditCard, CheckCircle, Clock, MapPin, AlertTriangle, X, Lock } from 'lucide-react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Navbar } from '../ui/Navbar';
 import { Footer } from '../sections/Footer';
 import { servicesData } from '../../data/services';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Calculator, User, CreditCard, CheckCircle, Clock, MapPin, AlertTriangle, X, Lock } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 import { Button } from '../ui/Button';
+import { CURRICULUM } from '../../constants';
 
 // ─── Mock Paystack Payment Modal ───────────────────────────────────
 const PaymentModal: React.FC<{
@@ -152,17 +153,31 @@ const PaymentModal: React.FC<{
 // ─── Main Booking Page ─────────────────────────────────────────────
 export const BookingPage: React.FC = () => {
     const navigate = useNavigate();
+    const [searchParams] = useSearchParams();
+    const isAcademy = searchParams.get('type') === 'academy';
+    const preselectedModule = searchParams.get('module');
 
     // Form State
-    const [selectedService, setSelectedService] = useState(servicesData[0].id);
+    const [selectedService, setSelectedService] = useState(
+        isAcademy 
+            ? (preselectedModule || CURRICULUM[0].id)
+            : servicesData[0].id
+    );
     const [guards, setGuards] = useState(1);
-    const [duration, setDuration] = useState(1);
-    const [location, setLocation] = useState('');
+    const [duration, setDuration] = useState(isAcademy ? 30 : 1); // Courses are longer
+    const [location, setLocation] = useState(isAcademy ? 'IKG Academy Regional Campus' : '');
     const [date, setDate] = useState('');
     const [clientName, setClientName] = useState('');
     const [email, setEmail] = useState('');
     const [loading, setLoading] = useState(false);
     const [showPaymentModal, setShowPaymentModal] = useState(false);
+
+    // Sync selected module if URL changes
+    useEffect(() => {
+        if (preselectedModule) {
+            setSelectedService(preselectedModule);
+        }
+    }, [preselectedModule]);
 
     // Pricing Constants
     const BASE_RATE_PER_GUARD = 250;
@@ -246,10 +261,12 @@ export const BookingPage: React.FC = () => {
                         Secure Request Protocol
                     </motion.div>
                     <h1 className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">
-                        Deploy <span className="text-ikg-gold">Assets</span>
+                        {isAcademy ? 'Academy' : 'Deploy'} <span className="text-ikg-gold">{isAcademy ? 'Enrollment' : 'Assets'}</span>
                     </h1>
-                    <p className="text-white/60 max-w-2xl mx-auto font-mono">
-                        Configure your security detail. Instant deployment available for high-priority sectors.
+                    <p className="text-white/60 max-w-2xl mx-auto font-mono text-sm">
+                        {isAcademy 
+                            ? "Secure your position in the upcoming elite training intake. All certifications are globally recognized." 
+                            : "Configure your security detail. Instant deployment available for high-priority sectors."}
                     </p>
                 </div>
 
@@ -269,34 +286,41 @@ export const BookingPage: React.FC = () => {
                         )}
 
                         <form onSubmit={handlePayment} className="space-y-8">
-                            {/* Service Selection */}
+                            {/* Service Selection / Course Selection */}
                             <div>
-                                <label className="block text-xs font-mono uppercase tracking-widest text-white/40 mb-3">Operational Requirement</label>
+                                <label className="block text-xs font-mono uppercase tracking-widest text-white/40 mb-3">
+                                    {isAcademy ? 'Select Course Module' : 'Operational Requirement'}
+                                </label>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    {servicesData.map((service) => (
-                                        <div
-                                            key={service.id}
-                                            onClick={() => setSelectedService(service.id)}
-                                            className={`cursor-pointer p-4 border transition-all duration-300 flex items-center gap-4 group ${selectedService === service.id
-                                                ? 'bg-ikg-gold/10 border-ikg-gold'
-                                                : 'bg-black/20 border-white/10 hover:border-white/30'
-                                                }`}
-                                        >
-                                            <div className={`p-2 rounded ${selectedService === service.id ? 'bg-ikg-gold text-black' : 'bg-white/5 text-white group-hover:bg-white/10'}`}>
-                                                <service.icon className="w-5 h-5" />
+                                    {(isAcademy ? CURRICULUM : servicesData).map((item: any) => {
+                                        const Icon = item.icon || Shield;
+                                        return (
+                                            <div
+                                                key={item.id}
+                                                onClick={() => setSelectedService(item.id)}
+                                                className={`cursor-pointer p-4 border transition-all duration-300 flex items-center gap-4 group ${selectedService === item.id
+                                                    ? 'bg-ikg-gold/10 border-ikg-gold'
+                                                    : 'bg-black/20 border-white/10 hover:border-white/30'
+                                                    }`}
+                                            >
+                                                <div className={`p-2 rounded ${selectedService === item.id ? 'bg-ikg-gold text-black' : 'bg-white/5 text-white group-hover:bg-white/10'}`}>
+                                                    <Icon className="w-5 h-5" />
+                                                </div>
+                                                <span className={`font-bold uppercase text-sm ${selectedService === item.id ? 'text-ikg-gold' : 'text-white'}`}>
+                                                    {item.title}
+                                                </span>
                                             </div>
-                                            <span className={`font-bold uppercase text-sm ${selectedService === service.id ? 'text-ikg-gold' : 'text-white'}`}>
-                                                {service.title}
-                                            </span>
-                                        </div>
-                                    ))}
+                                        );
+                                    })}
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                {/* Guard Count */}
+                                {/* Guard Count / Student Count */}
                                 <div>
-                                    <label className="block text-xs font-mono uppercase tracking-widest text-white/40 mb-3">Personnel Count</label>
+                                    <label className="block text-xs font-mono uppercase tracking-widest text-white/40 mb-3">
+                                        {isAcademy ? 'Student Count' : 'Personnel Count'}
+                                    </label>
                                     <div className="flex items-center gap-4 bg-black/20 border border-white/10 p-4">
                                         <User className="w-5 h-5 text-ikg-gold" />
                                         <input
@@ -312,7 +336,9 @@ export const BookingPage: React.FC = () => {
 
                                 {/* Duration */}
                                 <div>
-                                    <label className="block text-xs font-mono uppercase tracking-widest text-white/40 mb-3">Duration (Days)</label>
+                                    <label className="block text-xs font-mono uppercase tracking-widest text-white/40 mb-3">
+                                        {isAcademy ? 'Course Duration (Days)' : 'Duration (Days)'}
+                                    </label>
                                     <div className="flex items-center gap-4 bg-black/20 border border-white/10 p-4">
                                         <Clock className="w-5 h-5 text-ikg-gold" />
                                         <input
@@ -322,6 +348,7 @@ export const BookingPage: React.FC = () => {
                                             value={duration}
                                             onChange={(e) => setDuration(parseInt(e.target.value) || 1)}
                                             className="bg-transparent border-none outline-none text-white font-mono text-xl w-full"
+                                            readOnly={isAcademy} // Academy durations might be fixed, but for now we keep state
                                         />
                                     </div>
                                 </div>

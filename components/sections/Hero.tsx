@@ -82,11 +82,11 @@ export const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 md:8">
-              <Button variant="primary">
+              <Button as="link" to="/booking" variant="primary">
                 Book Now
               </Button>
 
-              <Button variant="outline">
+              <Button as="link" to="/services" variant="outline">
                 Explore
               </Button>
             </div>
