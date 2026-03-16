@@ -44,7 +44,6 @@ const Home: React.FC = () => (
     <Services />
     <Industries />
     <Academy />
-    <Recruiting />
     <Testimonials />
     <Footer />
   </main>

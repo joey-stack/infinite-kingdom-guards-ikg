@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Calendar } from 'lucide-react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
-import heroGuard from '@/public/assets/images/hero-guard.png';
+import heroGuard from '@/public/assets/images/ikg_corporate_vision.png';
 
 export const PromoPopup: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);

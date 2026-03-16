@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import heroBg from '@/public/assets/images/hero_bg_3.png';
+import heroBg from '@/public/assets/images/ikg_hero_premium.png';
 import { Button } from '../ui/Button';
 
 export const Hero: React.FC = () => {

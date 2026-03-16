@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '../ui/Button';
 
 // Assets
-import heroBg from '@/public/assets/images/feature-guard.png';
+import heroBg from '@/public/assets/images/ikg_hero_premium.png';
 
 export const ServicesPage: React.FC = () => {
     return (

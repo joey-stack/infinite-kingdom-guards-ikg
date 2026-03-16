@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, BookOpen, Shield, ShieldCheck, Target, Activity, ChevronRight, Lock, ChevronDown, CheckCircle, FileText, ShieldAlert } from 'lucide-react';
 import { CURRICULUM } from '../../constants';
 import { Button } from '../ui/Button';
-import img from '@/public/assets/images/hero_bg_3.png';
+import img from '@/public/assets/images/ikg_academy_training.png';
 
 export const Academy: React.FC = () => {
     const [expandedModule, setExpandedModule] = useState<string | null>(null);
