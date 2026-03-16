@@ -18,22 +18,21 @@ export const Services: React.FC = () => {
 
   const handleInfiniteScroll = () => {
     if (!containerRef.current) return;
-    const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
+    const { scrollLeft, scrollWidth } = containerRef.current;
+    
+    // Each section is exactly 1/3 of the total scrollWidth
+    const sectionWidth = scrollWidth / 3;
 
-    // Use a threshold larger than 0 to trigger the jump earlier
-    const threshold = 100;
-
-    // If approaching the start, jump to the same position in the middle section
-    if (scrollLeft < threshold) {
+    // If we've scrolled past the first section or into the last section, 
+    // jump back to the middle section instantly.
+    if (scrollLeft < sectionWidth * 0.5) {
       containerRef.current.scrollTo({
-        left: (scrollWidth / 3) + scrollLeft,
+        left: scrollLeft + sectionWidth,
         behavior: 'auto'
       });
-    }
-    // If approaching the end, jump to the same position in the middle section
-    else if (scrollLeft + clientWidth > scrollWidth - threshold) {
+    } else if (scrollLeft > sectionWidth * 1.5) {
       containerRef.current.scrollTo({
-        left: scrollLeft - (scrollWidth / 3),
+        left: scrollLeft - sectionWidth,
         behavior: 'auto'
       });
     }
@@ -41,9 +40,7 @@ export const Services: React.FC = () => {
 
   const scroll = (direction: 'left' | 'right') => {
     if (containerRef.current) {
-      // Calculate scroll amount based on the first card's width + gap
-      const firstCard = containerRef.current.firstElementChild as HTMLElement;
-      const scrollAmount = firstCard ? firstCard.offsetWidth + 24 : 400; // 24 is gap-6
+      const scrollAmount = 450 + 24; // Card width + gap
 
       const newScrollLeft =
         direction === 'left'
@@ -93,7 +90,6 @@ export const Services: React.FC = () => {
         ref={containerRef}
         onScroll={handleInfiniteScroll}
         className="flex overflow-x-auto pb-12 gap-6 no-scrollbar"
-        style={{ scrollBehavior: 'smooth' }}
       >
         {/* Triple the data to ensure smooth infinite feeling during manual scrolls */}
         {[...servicesData, ...servicesData, ...servicesData].map((service, index) => (
