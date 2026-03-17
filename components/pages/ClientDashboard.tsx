@@ -116,7 +116,7 @@ export const ClientDashboard: React.FC = () => {
                         { label: 'Active Deployments', value: activeDeployments.toString().padStart(2, '0'), icon: Activity, color: 'text-green-500', bg: 'bg-green-500/5', border: 'border-green-500/20' },
                         { label: 'Personnel Deployed', value: totalGuards.toString().padStart(2, '0'), icon: Users, color: 'text-blue-400', bg: 'bg-blue-500/5', border: 'border-blue-500/20' },
                         { label: 'Threat Level', value: 'ELEVATED', icon: AlertTriangle, color: 'text-orange-400', bg: 'bg-orange-400/5', border: 'border-orange-400/20' },
-                        { label: 'Total Investment', value: `$${totalCost.toLocaleString()}`, icon: DollarSign, color: 'text-ikg-gold', bg: 'bg-ikg-gold/5', border: 'border-ikg-gold/20' }
+                        { label: 'Total Investment', value: `₦${totalCost.toLocaleString()}`, icon: DollarSign, color: 'text-ikg-gold', bg: 'bg-ikg-gold/5', border: 'border-ikg-gold/20' }
                     ].map((kpi, idx) => (
                         <motion.div
                             key={idx}
@@ -315,7 +315,7 @@ export const ClientDashboard: React.FC = () => {
                                             </div>
                                             <div className="bg-black/30 border border-white/5 p-4">
                                                 <DollarSign className="w-4 h-4 text-ikg-gold mb-2" />
-                                                <div className="text-sm font-bold">${dep.cost.toLocaleString()}</div>
+                                                <div className="text-sm font-bold">₦{dep.cost.toLocaleString()}</div>
                                                 <div className="text-[10px] font-mono text-white/40 uppercase">Contract Value</div>
                                             </div>
                                         </div>
@@ -368,11 +368,11 @@ export const ClientDashboard: React.FC = () => {
                             </h3>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                                 <div className="bg-black/30 border border-white/5 p-6">
-                                    <div className="text-3xl font-black text-ikg-gold mb-2">${totalCost.toLocaleString()}</div>
+                                    <div className="text-3xl font-black text-ikg-gold mb-2">₦{totalCost.toLocaleString()}</div>
                                     <div className="text-xs font-mono text-white/40 uppercase">Total Billed</div>
                                 </div>
                                 <div className="bg-black/30 border border-white/5 p-6">
-                                    <div className="text-3xl font-black text-green-500 mb-2">$0</div>
+                                    <div className="text-3xl font-black text-green-500 mb-2">₦0</div>
                                     <div className="text-xs font-mono text-white/40 uppercase">Outstanding Balance</div>
                                 </div>
                                 <div className="bg-black/30 border border-white/5 p-6">
@@ -396,7 +396,7 @@ export const ClientDashboard: React.FC = () => {
                                             <span className="font-mono text-white/60 text-xs">{dep.id.slice(0, 12)}...</span>
                                             <span className="font-bold text-white text-xs uppercase">{getServiceName(dep.serviceId)}</span>
                                             <span className="text-white/50 text-xs">{dep.startDate}</span>
-                                            <span className="font-mono text-ikg-gold text-xs">${dep.cost.toLocaleString()}</span>
+                                            <span className="font-mono text-ikg-gold text-xs">₦{dep.cost.toLocaleString()}</span>
                                             <span className="text-green-500 font-bold text-xs uppercase flex items-center gap-1">
                                                 <CheckCircle className="w-3 h-3" /> Paid
                                             </span>

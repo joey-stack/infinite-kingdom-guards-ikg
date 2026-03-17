@@ -1,5 +1,7 @@
 import { ServiceItem, CurriculumModule, OperationalLogItem, NewsItem } from './types';
 
+export const BASE_RATE = 250000;
+
 export const SERVICES: ServiceItem[] = [
   {
     id: 'combat',

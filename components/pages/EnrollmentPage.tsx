@@ -252,7 +252,7 @@ export const EnrollmentPage: React.FC = () => {
                       <div className="w-full h-px bg-white/10 mb-6" />
                       <div className="flex justify-between items-end">
                         <span className="text-white/40 uppercase font-mono text-xs">Total Commitment</span>
-                        <span className="text-4xl font-black text-white">$450.00</span>
+                        <span className="text-4xl font-black text-white">₦750,000</span>
                       </div>
                     </div>
 

@@ -68,7 +68,7 @@ const PaymentModal: React.FC<{
                             <div className="text-center mb-4">
                                 <div className="text-white/50 text-sm">{email}</div>
                                 <div className="text-3xl font-black text-white mt-2">
-                                    ${(amount).toLocaleString()}<span className="text-sm text-white/40">.00</span>
+                                    ₦{(amount).toLocaleString()}<span className="text-sm text-white/40">.00</span>
                                 </div>
                             </div>
 
@@ -114,7 +114,8 @@ const PaymentModal: React.FC<{
                                 type="submit"
                                 className="w-full py-4 bg-[#00C853] text-white font-bold uppercase tracking-widest hover:bg-[#00E676] transition-colors"
                             >
-                                Pay ${amount.toLocaleString()}.00
+                                Pay ₦{amount.toLocaleString()}.00
+
                             </button>
 
                             <p className="text-center text-[10px] text-white/30 font-mono">
@@ -180,7 +181,8 @@ export const BookingPage: React.FC = () => {
     }, [preselectedModule]);
 
     // Pricing Constants
-    const BASE_RATE_PER_GUARD = 250;
+    const BASE_RATE_PER_GUARD = 250000;
+
     const SERVICE_MULTIPLIERS: Record<string, number> = {
         'escort-services': 1.5,
         'close-protection': 2.5,
@@ -432,7 +434,8 @@ export const BookingPage: React.FC = () => {
                             <div className="space-y-4 mb-8 text-sm">
                                 <div className="flex justify-between text-white/60">
                                     <span>Base Rate / Guard</span>
-                                    <span className="font-mono text-white">${BASE_RATE_PER_GUARD}</span>
+                                    <span className="font-mono text-white">₦{BASE_RATE_PER_GUARD.toLocaleString()}</span>
+
                                 </div>
                                 <div className="flex justify-between text-white/60">
                                     <span>Service Multiplier</span>
@@ -446,7 +449,8 @@ export const BookingPage: React.FC = () => {
                                 <div className="flex justify-between items-end">
                                     <span className="font-bold uppercase text-white">Total Estimate</span>
                                     <span className="text-3xl font-black text-ikg-gold font-mono">
-                                        ${totalCost.toLocaleString()}
+                                        ₦{totalCost.toLocaleString()}
+
                                     </span>
                                 </div>
                             </div>
