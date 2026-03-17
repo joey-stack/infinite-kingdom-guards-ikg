@@ -6,7 +6,7 @@ import recruitingImg from '@/public/assets/images/feature-guard.png';
 
 export const Recruiting: React.FC = () => {
     return (
-        <section id="recruiting" className="h-screen w-full flex flex-col md:flex-row bg-ikg-stealth overflow-hidden relative">
+        <section id="recruiting" className="h-[70vh] w-full flex flex-col md:flex-row bg-ikg-stealth overflow-hidden relative">
             <div className="max-w-7xl mx-auto px-6 md:px-20 w-full flex flex-col md:flex-row h-full">
 
             {/* Image Side (Left on Desktop, Top on Mobile) */}
@@ -19,11 +19,8 @@ export const Recruiting: React.FC = () => {
                     src={recruitingImg}
                     alt="Elite IKG Guards"
                     loading="lazy"
-                    className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-700"
+                    className="w-full h-full object-cover object-top transition-opacity duration-700"
                 />
-
-                {/* Decorative Grid Overlay - Subtle tactical feel */}
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(197,160,89,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(197,160,89,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none opacity-20" />
             </div>
 
             {/* Content Side (Right on Desktop, Bottom on Mobile) */}
@@ -66,7 +63,7 @@ export const Recruiting: React.FC = () => {
                     </div>
 
                     <Button variant="outline" className="text-ikg-gold border-ikg-gold hover:text-black">
-                        <span className="flex items-center gap-4">
+                        <span className="flex items-center gap-4 whitespace-nowrap">
                             Apply Now
                             <ArrowRight className="w-5 h-5 relative z-10" />
                         </span>
