@@ -24,6 +24,8 @@ const ClientDashboard = React.lazy(() => import('./components/pages/ClientDashbo
 const ContactPage = React.lazy(() => import('./components/pages/ContactPage').then(m => ({ default: m.ContactPage })));
 const NotFoundPage = React.lazy(() => import('./components/pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
 const ServiceDetail = React.lazy(() => import('./components/pages/ServiceDetail').then(m => ({ default: m.ServiceDetail })));
+const EnrollmentPage = React.lazy(() => import('./components/pages/EnrollmentPage').then(m => ({ default: m.EnrollmentPage })));
+
 
 import { ProtectedRoute } from './components/ui/ProtectedRoute';
 import { PromoPopup } from './components/ui/PromoPopup';
@@ -66,7 +68,9 @@ const App: React.FC = () => {
           <Route path="/dashboard" element={<ProtectedRoute><ClientDashboard /></ProtectedRoute>} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/services/:id" element={<ServiceDetail />} />
+          <Route path="/enrollment/:classId" element={<EnrollmentPage />} />
           <Route path="*" element={<NotFoundPage />} />
+
         </Routes>
       </React.Suspense>
     </SmoothScroll>

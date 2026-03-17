@@ -103,12 +103,13 @@ export const Academy: React.FC = () => {
                             <h3 className="text-2xl md:text-4xl font-black text-white uppercase mb-3 tracking-tighter">Elite Status</h3>
                             <p className="text-white/60 mb-6 md:mb-8 max-w-sm font-mono text-[10px] md:text-sm leading-relaxed">JOIN THE RANKS OF THE WORLD'S MOST DISCIPLINED SECURITY FORCE. RECRUITMENT IS OPEN FOR BATCH 24.</p>
 
-                            <Button as="link" to="/booking?type=academy" className="mt-8 rounded-sm">
+                            <Button as="link" to="/enrollment/1" className="mt-8 rounded-sm">
                                 <span className="flex items-center gap-2">
                                     Enroll Now
                                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2 relative z-10" />
                                 </span>
                             </Button>
+
                         </div>
                     </motion.div>
 
